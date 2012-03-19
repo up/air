@@ -49,6 +49,14 @@ Choose the suffixes and the corresponding display resolutions:
 	  1199: '-wide'    // Desktop Displays
 	});
 	</script>
+	
+Note: For this example you need for each image 5 different versions
+
+1 myimage.jpg 
+1 myimage-base.jpg
+1 myimage-small.jpg
+1 myimage-medium.jpg
+1 myimage-wide.jpg
 
 ##### Example 2:
 	<script>  
