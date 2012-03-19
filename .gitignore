@@ -1,0 +1,10 @@
+# OS Generated Files 
+.DS_Store
+Thumbs.db
+
+# TextMate Project Files
+*.tm*
+
+# Locale Development, Build and Release Folders
+# starting with an unterscore
+\_*/
