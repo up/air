@@ -41,15 +41,22 @@ Include the 'air.min.js' to the end of your page body:
 
 Choose the suffixes and the corresponding display resolutions:
 
-##### Example One
+##### Example 1
 
 	air.set({
-	  // min screen width: name suffix
 	  1: '-base',      // Smartphones (portrait)  
 	  450: '-small',   // Smartphones (portrait)  
 	  555: '-medium',  // Smartphones (landscape)
 	  850: '',         // Default Image without suffix Tablets (landscape), Notebooks 
 	  1199: '-wide'    // Desktop Displays
+	});
+	</script>
+
+##### Example 2
+
+	air.set({
+	  1: '-mobile',  // Mobile Displays 
+	  1000: ''       // Desktop Displays
 	});
 	</script>
 
