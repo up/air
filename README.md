@@ -16,7 +16,7 @@ and cloned with:
 
 ### Step 1
 
-Wrap your 'img' tags in 'noscript' sections:
+Wrap your 'img' tags into 'noscript' sections:
 
 	<noscript>
 	  <img src="images/test1.jpg" alt="Alt text 1" />
@@ -35,6 +35,14 @@ Include the 'air.min.js' to the end of your page body:
 	<script src="air.min.js"></script>
 	
 	<script>  
+
+
+### Step 3
+
+Choose the suffixes and the corresponding display resolutions:
+
+#### Example One
+
 	air.set({
 	  // min screen width: name suffix
 	  1: '-base',      // Smartphones (portrait)  
