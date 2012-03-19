@@ -55,7 +55,7 @@ Choose the suffixes and the corresponding display resolutions:
 	});
 	</script>
 
-**Note**: For this example you need for each image 2 different versions
+**Note**: In this example, you need 2 different versions of each image
 
 	1. MYIMAGE.jpg        (for screens with 1024 and more pixel)
 	2. MYIMAGE-mobile.jpg (for screens with between 1 and 1023 pixel)
@@ -72,7 +72,7 @@ Choose the suffixes and the corresponding display resolutions:
 	});
 	</script>
 	
-**Note**: For this example you need for each image 5 different versions
+**Note**: In this example, you need 5 different versions of each image
 
 	1. MYIMAGE-base.jpg   (for screens with between 1 and 319 pixel)
 	2. MYIMAGE-small.jpg  (for screens with between 320 and 479 pixel)
