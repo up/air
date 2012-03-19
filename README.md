@@ -46,7 +46,22 @@ Include the 'air.min.js' to the end of your page body:
 
 Choose the suffixes and the corresponding display resolutions:
 
-##### Example 1: 
+
+##### Example 1:
+	<script>  
+	air.set({
+	  1: '-mobile',  // Mobile Displays 
+	  1024: ''       // Desktop Displays
+	});
+	</script>
+
+**Note**: For this example you need for each image 2 different versions
+
+	1. MYIMAGE.jpg        (for screens with 1024 and more pixel)
+	2. MYIMAGE-mobile.jpg (for screens with between 1 and 1023 pixel)
+
+
+##### Example 2: 
 	<script>  
 	air.set({
 	  1: '-base',      // e.g. Smartphones (portrait)  
@@ -59,25 +74,11 @@ Choose the suffixes and the corresponding display resolutions:
 	
 **Note**: For this example you need for each image 5 different versions
 
-	1. MYIMAGE-base.jpg   (between 1 and 319 pixel)
-	2. MYIMAGE-small.jpg  (between 320 and 479 pixel)
-	3. MYIMAGE-medium.jpg (between 480 and 959 pixel)
-	4. MYIMAGE.jpg        (between 960 and 1279 pixel)		
-	5. MYIMAGE-wide.jpg   (1199 and more pixel)
-
-##### Example 2:
-	<script>  
-	air.set({
-	  1: '-mobile',  // Mobile Displays 
-	  1024: ''       // Desktop Displays
-	});
-	</script>
-
-**Note**: For this example you need for each image 2 different versions
-
-	1. MYIMAGE.jpg        (1024 and more pixel)
-	2. MYIMAGE-mobile.jpg (between 1 and 1023 pixel)
-
+	1. MYIMAGE-base.jpg   (for screens with between 1 and 319 pixel)
+	2. MYIMAGE-small.jpg  (for screens with between 320 and 479 pixel)
+	3. MYIMAGE-medium.jpg (for screens with between 480 and 959 pixel)
+	4. MYIMAGE.jpg        (for screens with between 960 and 1279 pixel)		
+	5. MYIMAGE-wide.jpg   (for screens with 1199 and more pixel)
 
 
 ## Copyright
