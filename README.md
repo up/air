@@ -28,6 +28,8 @@ Wrap your 'img' tags into 'noscript' sections:
 	
 	..   
 	
+**Note**: You can use all kinds of image types (jpg, png, gif, ..)
+
 ### Step 2
 
 Include the 'air.min.js' to the end of your page body:
@@ -45,31 +47,31 @@ Choose the suffixes and the corresponding display resolutions:
 	  1: '-base',      // Smartphones (portrait)  
 	  450: '-small',   // Smartphones (landscape)  
 	  555: '-medium',  // Tablets (portrait)
-	  850: '',         // Default Image without suffix Tablets (landscape), Notebooks 
+	  850: '',         // Default Image without suffix Tablets (landscape), **Note**books 
 	  1199: '-wide'    // Desktop and other wide displays
 	});
 	</script>
 	
-Note: For this example you need for each image 5 different versions
+**Note**: For this example you need for each image 5 different versions
 
-* myimage.jpg (between 850 and 1198 pixel)
-* myimage-base.jpg (between 1 and 449 pixel)
-* myimage-small.jpg (between 450 and 849 pixel)
-* myimage-medium.jpg (between 555 and 1198 pixel)
-* myimage-wide.jpg (1199 and more pixel)
+* MYIMAGE.jpg (between 850 and 1198 pixel)
+* MYIMAGE-base.jpg (between 1 and 449 pixel)
+* MYIMAGE-small.jpg (between 450 and 849 pixel)
+* MYIMAGE-medium.jpg (between 555 and 1198 pixel)
+* MYIMAGE-wide.jpg (1199 and more pixel)
 
 ##### Example 2:
 	<script>  
 	air.set({
 	  1: '-mobile',  // Mobile Displays 
-	  740: ''       // Desktop Displays
+	  740: ''        // Desktop Displays
 	});
 	</script>
 
-Note: For this example you need for each image only 2 different versions
+**Note**: For this example you need for each image 2 different versions
 
-* myimage.jpg (740 and more pixel)
-* myimage-mobile.jpg (between 1 and 739 pixel)
+* MYIMAGE.jpg (740 and more pixel)
+* MYIMAGE-mobile.jpg (between 1 and 739 pixel)
 
 
 
