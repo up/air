@@ -49,11 +49,11 @@ Choose the suffixes and the corresponding display resolutions:
 ##### Example 1: 
 	<script>  
 	air.set({
-	  1: '-base',      // Smartphones (portrait)  
-	  320: '-small',   // Smartphones (landscape)  
-	  480: '-medium',  // Tablets (portrait)
-	  960: '',         // Default Image without suffix - Tablets (landscape), Netbooks, .. 
-	  1280: '-wide'    // Desktop and other wide displays
+	  1: '-base',      // e.g. Smartphones (portrait)  
+	  320: '-small',   // e.g. Smartphones (landscape)  
+	  480: '-medium',  // e.g. Tablets (portrait)
+	  960: '',         // Default Image without suffix - e.g. Tablets (landscape), Netbooks, .. 
+	  1280: '-wide'    // e.g. Desktop PCs
 	});
 	</script>
 	
