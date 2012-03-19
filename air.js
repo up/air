@@ -4,30 +4,13 @@
 
     set: function(config, resize) {
 
-      var display, res, res1, dot, src, img, nos, nostext, parent, smallest, hasImg,
+      var display, res, dot, source, fileextension, imgpath, img, nos, nostext, parent, hasImg,
         noscripts = document.getElementsByTagName('noscript'),
-        i = 0, length = noscripts.length, iWidth = window.innerWidth,
-        smallest_res = 10000,
-        to_i = function(str){
-          return parseInt(str, 10);
-        };
+        i = 0, length = noscripts.length, iWidth = window.innerWidth;
 
       for (res in config) {
-        if (smallest_res >= to_i(res)) {
-          smallest_res = to_i(res);
-          smallest = config[res];
-        }
-      }
-
-      if (iWidth < smallest_res) {
-        for (res in config) {
-          display = smallest;
-        }
-      } else {
-        for (res in config) {
-          if (iWidth >= to_i(res)) {
-            display = config[res];
-          }
+        if (iWidth >= parseInt(res, 10)) {
+          display = config[res];
         }
       }
 
@@ -38,14 +21,14 @@
         if(!hasImg) {
           return;
         }
-        src = /src=([^ ]+)/.exec(nostext)[1];
-        dot = src.lastIndexOf('.');
-        path = src.substring(1, dot);
-        ext = src.substring(dot, src.length - 1);
+        source = /src=([^ ]+)/.exec(nostext)[1];
+        dot = source.lastIndexOf('.');
+        imgpath = source.substring(1, dot);
+        fileextension = source.substring(dot, source.length - 1);
 
         if (!resize) {
           img = document.createElement("img");
-          img.src = path + display + ext;
+          img.src = imgpath + display + fileextension;
           img.alt = nos.alt;
 
           parent = nos.parentNode;
@@ -57,7 +40,7 @@
 
         } else {
           img = nos.previousSibling;
-          img.src = path + display + ext;
+          img.src = imgpath + display + fileextension;
         }
       }
 

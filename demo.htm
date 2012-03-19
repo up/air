@@ -61,21 +61,21 @@
     </fieldset>
 
     <noscript>
-       <p>Nonimage noscript section</p>
+       <p>'Normal' noscript section</p>
     </noscript>    
 
   </section>
 
-  <script src="air.js"></script>
+  <script src="air.min.js"></script>
 
   <script>  
   air.set({
-    // max screen width: name suffix
-    450: '-base',   // Smartphones (portrait)  
-    555: '-small',  // Smartphones (landscape)
-    850: '-medium', // Tablets (portrait)
-    1000: '',       // Default Image without suffix Tablets (landscape), Notebooks 
-    1199: '-wide'   // Desktop Displays
+    // min screen width: name suffix
+    1: '-base',      // Smartphones (portrait)  
+    450: '-small',   // Smartphones (portrait)  
+    555: '-medium',  // Smartphones (landscape)
+    850: '',         // Default Image without suffix Tablets (landscape), Notebooks 
+    1199: '-wide'    // Desktop Displays
   });
   </script>
 
