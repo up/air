@@ -69,14 +69,13 @@
   <script src="air.min.js"></script>
 
   <script>  
-  air.set({
-    // min screen width: name suffix
-    1: '-base',      // Smartphones (portrait)  
-    450: '-small',   // Smartphones (portrait)  
-    555: '-medium',  // Smartphones (landscape)
-    850: '',         // Default Image without suffix Tablets (landscape), Notebooks 
-    1199: '-wide'    // Desktop Displays
-  });
+	air.set({
+	  1: '-base',      // Smartphones (portrait)  
+	  320: '-small',   // Smartphones (landscape)  
+	  480: '-medium',  // Tablets (portrait)
+	  960: '',         // Default Image without suffix - Tablets (landscape), Netbooks, .. 
+	  1280: '-wide'    // Desktop and other wide displays
+	});
   </script>
 
 </body>
