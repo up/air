@@ -54,11 +54,11 @@ Choose the suffixes and the corresponding display resolutions:
 	
 **Note**: For this example you need for each image 5 different versions
 
-- MYIMAGE.jpg (between 850 and 1198 pixel)		
-- MYIMAGE-base.jpg (between 1 and 449 pixel)
-- MYIMAGE-small.jpg (between 450 and 849 pixel)
-- MYIMAGE-medium.jpg (between 555 and 1198 pixel)
-- MYIMAGE-wide.jpg (1199 and more pixel)
+	MYIMAGE.jpg        (between 850 and 1198 pixel)		
+	MYIMAGE-base.jpg   (between 1 and 449 pixel)
+	MYIMAGE-small.jpg  (between 450 and 849 pixel)
+	MYIMAGE-medium.jpg (between 555 and 1198 pixel)
+	MYIMAGE-wide.jpg   (1199 and more pixel)
 
 ##### Example 2:
 	<script>  
