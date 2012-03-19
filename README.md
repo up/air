@@ -41,7 +41,7 @@ Include the 'air.min.js' to the end of your page body:
 
 Choose the suffixes and the corresponding display resolutions:
 
-#### Example One
+##### Example One
 
 	air.set({
 	  // min screen width: name suffix
