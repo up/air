@@ -5,7 +5,7 @@ AIR - Adaptive Image Resizing
 
 Air's Git repo is available on GitHub, which can be browsed at:
 
-    http://github.com/up/air
+    https://github.com/up/air
 
 and cloned with:
 
@@ -14,14 +14,24 @@ and cloned with:
 
 ## Usage
 
+### Step 1
+
+Wrap your 'img' tags in 'noscript' sections:
+
 	<noscript>
 	  <img src="images/test1.jpg" alt="Alt text 1" />
 	</noscript>
 	
 	<noscript>
 	  <img src="images/test2.jpg" alt="Alt text 2" />
-	</noscript>    
+	</noscript> 
 	
+	..   
+	
+### Step 2
+
+Include the 'air.min.js' to the end of your page body:
+
 	<script src="air.min.js"></script>
 	
 	<script>  
