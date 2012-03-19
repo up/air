@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
-  <title>Demo Responsive Images (with noscript tag)</title>
+  <title>AIR - Adaptive Image Resizing</title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script src="https://raw.github.com/scottjehl/Respond/master/respond.min.js"></script>
@@ -70,11 +70,12 @@
 
   <script>  
   air.set({
-    450: '-base', //smartphones (portrait)  
-    555: '-small', //smartphones (landscape)
-    850: '-medium', // iPad in portrait
-    1000: '',
-    1199: '-wide'
+    // max screen width: name suffix
+    450: '-base',   // Smartphones (portrait)  
+    555: '-small',  // Smartphones (landscape)
+    850: '-medium', // Tablets (portrait)
+    1000: '',       // Default Image without suffix Tablets (landscape), Notebooks 
+    1199: '-wide'   // Desktop Displays
   });
   </script>
 
