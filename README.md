@@ -34,15 +34,13 @@ Include the 'air.min.js' to the end of your page body:
 
 	<script src="air.min.js"></script>
 	
-	<script>  
-
 
 ### Step 3
 
 Choose the suffixes and the corresponding display resolutions:
 
-##### Example 1
-
+##### Example 1: 
+	<script>  
 	air.set({
 	  1: '-base',      // Smartphones (portrait)  
 	  450: '-small',   // Smartphones (portrait)  
@@ -52,15 +50,13 @@ Choose the suffixes and the corresponding display resolutions:
 	});
 	</script>
 
-##### Example 2
-
+##### Example 2:
+	<script>  
 	air.set({
 	  1: '-mobile',  // Mobile Displays 
 	  1000: ''       // Desktop Displays
 	});
 	</script>
-
-  
 
 
 ## Copyright
