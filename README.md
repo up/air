@@ -52,11 +52,11 @@ Choose the suffixes and the corresponding display resolutions:
 	
 Note: For this example you need for each image 5 different versions
 
-1 myimage.jpg 
-1 myimage-base.jpg
-1 myimage-small.jpg
-1 myimage-medium.jpg
-1 myimage-wide.jpg
+* myimage.jpg 
+* myimage-base.jpg
+* myimage-small.jpg
+* myimage-medium.jpg
+* myimage-wide.jpg
 
 ##### Example 2:
 	<script>  
