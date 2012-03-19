@@ -83,4 +83,4 @@ Choose the suffixes and the corresponding display resolutions:
 
 ## Copyright
 
-Copyright (c) 2012 Uli Preuss. See LICENSE for details.
+Copyright (c) 2012 Uli Preuss. See [LICENSE](https://github.com/up/air/blob/master/LICENSE.md) for details.
