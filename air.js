@@ -4,7 +4,7 @@
     
     noscripts: [],
 
-    callback: function(config, resize, noscripts) {
+    addImages: function(config, resize, noscripts) {
       
       if(!noscripts) {
         noscripts = air.noscripts;
@@ -58,38 +58,42 @@
       
     },
             
-    set: function(config, resize) {
-      
-      var xhr, data, noscripts;
-      
-      if(air.noscripts.length > 0) {
-        air.callback(config, resize);
-      } else {
-        
+    xhr: function(config, resize) {
+
+      var req, data, noscripts;
+
+      try {
+        req = new XMLHttpRequest();
+      } 
+      catch(e){
         try {
-          xhr = new XMLHttpRequest();
-        } 
-        catch(e){
-          try {
-            xhr = new ActiveXObject('Msxml2.XMLHTTP');
-          }
-          catch(e2){
-            xhr = new ActiveXObject('Microsoft.XMLHTTP');
-          }
+          req = new ActiveXObject('Msxml2.XMLHTTP');
         }
-        if(xhr) {
-          xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200){
-              data = xhr.responseText; 
-              noscripts = data.match(/<noscript\b[^>]*>(?:(?=([^<]+))\1|<(?!noscript\b[^>]*>))*?<\/noscript>/gi);
-              air.callback(config, resize, noscripts) ;               
-            }
-          };
-          xhr.open('GET', location.href, true);
-          xhr.send();
+        catch(e2){
+          req = new ActiveXObject('Microsoft.XMLHTTP');
         }
       }
-      
+      if(req) {
+        req.onreadystatechange = function() {
+          if (req.readyState == 4 && req.status == 200){
+            data = req.responseText; 
+            noscripts = data.match(/<noscript\b[^>]*>(?:(?=([^<]+))\1|<(?!noscript\b[^>]*>))*?<\/noscript>/gi);
+            air.addImages(config, resize, noscripts) ;               
+          }
+        };
+        req.open('GET', location.href, true);
+        req.send();
+      }
+
+    },
+            
+    set: function(config, resize) {
+            
+      if(air.noscripts.length > 0) {
+        air.addImages(config, resize);
+      } else {
+        air.xhr(config, resize);        
+      }      
 
     },
             
