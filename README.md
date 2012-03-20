@@ -1,6 +1,11 @@
 AIR - Adaptive Image Resizing
 ====
 
+AIR is a small tool for the integration and load different images depending on the display width.
+
+AIR is lightweight (1.21KB / 732 bytes gzipped) and easy to integrate.
+
+
 ## Source
 
 Air's Git repo is available on GitHub, which can be browsed at:
