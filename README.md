@@ -14,7 +14,7 @@ and cloned with:
 
 ## Supported Browser
 
-Tested with Chrome 17, Firefox 10, Safari 5
+Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
 
 
 ## Usage
