@@ -33,7 +33,7 @@ Wrap your 'img' tags into 'noscript' sections:
 	
 	..   
 	
-**Note**: You can use all kinds of image types (jpg, png, gif, ..)
+**Note**: You can use any kinds of image types (jpg, png, gif, ..)
 
 ### Step 2
 
