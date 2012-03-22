@@ -86,58 +86,58 @@
 
       <p>Air's Git repo is available on GitHub, which can be browsed at:</p>
       <code>
-		    https://github.com/up/air
+        https://github.com/up/air
       </code>
 
       <p>.. and cloned with:</p>
       <code>
-		    git clone git://github.com/up/air.git
+        git clone git://github.com/up/air.git
       </code>
 
     </article>
-		
+    
     <article>
     
       <h3>Usage</h3>
 
       <p>
-	      <strong>Step 1</strong> - Wrap your 'img' tags into 'noscript' sections:
+        <strong>Step 1</strong> - Wrap your 'img' tags into 'noscript' sections:
       </p>
 
       <code>
-				&lt;noscript&gt; <br/> 
-				<span>&nbsp;</span> &lt;img src="images/MYIMAGE1.jpg" alt="Alt text 1" class="thumb"/&gt; <br/> 
-				&lt;/noscript&gt; <br/> 
+        &lt;noscript&gt; <br/> 
+        <span>&nbsp;</span> &lt;img src="images/MYIMAGE1.jpg" alt="Alt text 1" class="thumb"/&gt; <br/> 
+        &lt;/noscript&gt; <br/> 
         <br/> 
-				&lt;noscript&gt; <br/> 
-				<span>&nbsp;</span> &lt;img src="images/MYIMAGE2.jpg" alt="Alt text 2" onclick="alert('xxx')" /&gt; <br/> 
-				&lt;/noscript&gt; <br/> 
+        &lt;noscript&gt; <br/> 
+        <span>&nbsp;</span> &lt;img src="images/MYIMAGE2.jpg" alt="Alt text 2" onclick="alert('xxx')" /&gt; <br/> 
+        &lt;/noscript&gt; <br/> 
         <br/> 
-				..   
+        ..   
       </code>
 
       <p>
-	      Note: You can use any kinds of image types (jpg, png, gif, ..) and image attributes.
-	    </p>
-	
-	    <br/>
+        Note: You can use any kinds of image types (jpg, png, gif, ..) and image attributes.
+      </p>
+  
+      <br/>
 
       <p>
-	      <strong>Step 2</strong> - Include the 'air.min.js' to the end of your page body:
+        <strong>Step 2</strong> - Include the 'air.min.js' to the end of your page body:
       </p>
 
       <code>
-				&lt;script src="air.min.js"&gt;&lt;/script&gt;
+        &lt;script src="air.min.js"&gt;&lt;/script&gt;
       </code>
 
-	    <br/>
+      <br/>
 
-	    <p>
-	      <strong>Step 3</strong> - Choose the suffixes and the corresponding display resolutions (See next examples).
-	    </p>
+      <p>
+        <strong>Step 3</strong> - Choose the suffixes and the corresponding display resolutions (See next examples).
+      </p>
 
     </article>
-		
+    
     <article>
     
       <h3>Example 1</h3>
@@ -158,14 +158,14 @@
       <br/>
     
       <p>In this example, you need 2 different versions of each image:</p>
-			
+      
       <ol>
         <li><strong>MYIMAGE-mobile.jpg</strong>   (for screens between 1 and 1023 px)</li>
         <li><strong>MYIMAGE.jpg</strong>        (for screens greater 1024 px)</li>
       </ol>
 
     </article>
-		
+    
     <article>
     
       <h3>Example 2</h3>
@@ -187,7 +187,7 @@
       <br/>
     
       <p>Here you need 5 different versions of each image:</p>
-			
+      
       <ol>
         <li><strong>MYIMAGE-base.jpg</strong>   (for screens between 1 and 320 px)</li>
         <li><strong>MYIMAGE-small.jpg</strong>  (for screens between 320 and 640 px)</li>
@@ -197,17 +197,17 @@
       </ol>
 
     </article>
-		
+    
     <article>
     
       <h3>Known Issues</h3>
 
       <p>
         <strong>Issue 1 - My image onclick eventhandler is gone ..</strong><br/><br/>
-				If you're having trouble with eventhandler, please make sure you haven't mixed single and double quotation marks in attributes like: 
+        If you're having trouble with eventhandler, please make sure you haven't mixed single and double quotation marks in attributes like: 
       </p>
       <code>
-		    &lt;img .. onclick="alert('Hello World')" /&gt;
+        &lt;img .. onclick="alert('Hello World')" /&gt;
       </code>
       <p>
         You can solve the problem with 'Unobtrusive JavaScript' - which is always preferable ;). 
@@ -215,10 +215,10 @@
     
     </article>
     
-		<footer>
-			Copyright &copy; 2012 Uli Preuss.
-		</footer>
-			
+    <footer>
+      Copyright &copy; 2012 Uli Preuss.
+    </footer>
+      
   </section>
   
   <aside>
