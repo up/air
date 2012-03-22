@@ -15,131 +15,132 @@
     
   <section>
 
-	  <header>
-	   <h2><strong>air</strong> - <span>adaptive image resizing</span></h2>
-	  </header>
-	
-		<article>
-			
-			<p>
-				<strong>air</strong> is a tiny tool (specifically for <strong>responsive web design</strong>) that can significantly improve the performance of the mobile version(s) of your website. Resize this page to <strong>see it in action!</strong>
-			</p>
-			
-		</article>
-	  
-		<figure>
+    <header>
+       <h2><strong>air</strong> - <span>adaptive image resizing</span></h2>
+    </header>
+  
+    <article>
+      
+      <p>
+        <strong>air</strong> is a tiny tool (specifically for <strong>responsive web design</strong>) that can significantly 
+        improve the performance of the mobile version(s) of your website. Resize this page to <strong>see it in action!</strong>
+      </p>
+      
+    </article>
+    
+    <figure>
 
-			<noscript>
-			  <img src="images/airplane.jpg" alt="Airplane image" id="airplane" />
-			</noscript>
+      <noscript>
+        <img src="images/airplane.jpg" alt="Airplane image" id="airplane" />
+      </noscript>
 
-			<figcaption>Original Photo &copy; by Peter Kubalak (www.peterkubalak.com)</figcaption>
+      <figcaption>Original Photo &copy; by Peter Kubalak (www.peterkubalak.com)</figcaption>
 
-		</figure>
-		
-	  <article>
-		
-			<h3>How does it work?</h3>
+    </figure>
+    
+    <article>
+    
+      <h3>How does it work?</h3>
 
-			<p>
-				<strong>In short</strong>: air loads different images for different window sizes. 
-				You can decide how many alternative pictures you will offer and which breakpoints you will define.			
-			</p>
-			<p>
-				.. with optimized file size
-			</p>
-		  		
-		</article>
-		
-	  <article>
-		
-			<h3>At a glance</h3>
+      <p>
+        <strong>In short</strong>: air loads different images for different window sizes. 
+        You can decide how many alternative pictures you will offer and which breakpoints you will define.      
+      </p>
+      <p>
+        .. with optimized file size
+      </p>
+          
+    </article>
+    
+    <article>
+    
+      <h3>At a glance</h3>
 
-			<ul>
-				<li>
-					Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
-				</li>
-				<li>
-					Framework-independent
-				</li>
-				<li>
-					Lightweight (1.36KB / 824 bytes gzipped)
-				</li>
-				<li>
-					Easy to integrate and use
-				</li>
-				<li>
-					Compatible with the following approaches: Resposive (Web) Design, Mobile First, Progressive Enhancement
-				</li>
-					
+      <ul>
+        <li>
+          Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
+        </li>
+        <li>
+          Framework-independent
+        </li>
+        <li>
+          Lightweight (1.36KB / 824 bytes gzipped)
+        </li>
+        <li>
+          Easy to integrate and use
+        </li>
+        <li>
+          Compatible with the following approaches: Resposive (Web) Design, Mobile First, Progressive Enhancement
+        </li>
+          
 
-			</ul>
-		
-		</article>
-		
-	  <article>
-		
-			<h3>Example 1</h3>
+      </ul>
+    
+    </article>
+    
+    <article>
+    
+      <h3>Example 1</h3>
 
-			<p>
-				 
-			</p>
-		  
-			<code>
-				&lt;<span class="tag">script</span> 
-				 <span class="attr-name">src</span>=<span class="attr-val">"air.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
-			</code>
-		
-			<code>
-					&lt;<span class="tag">script</span>&gt; <br/>
-					<span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
-				<span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-base'</span>, <br/> 
-				<span>&nbsp;</span> <span class="prop">321</span>: <span class="string">'-small'</span>, <br/>
-				<span>&nbsp;</span> <span class="prop">641</span>: <span class="string">'-medium'</span>, <br/>
-				<span>&nbsp;</span> <span class="prop">961</span>: <span class="string">''</span>, <br/>
-				<span>&nbsp;</span> <span class="prop">1280</span>: <span class="string">'-wide'</span> <br/>
-				}<span class="fn">)</span>; <br/>
-				&lt;/<span class="tag">script</span>&gt; 
-			</code>
-		
-		  <p>Explanation</p>
-			
-			<ul>
-				<li>Suffix '<strong>-base</strong>' between 1 and 320 px display width</li>
-				<li>Suffix '<strong>-small</strong>' between 320 and 640 px display width</li>
-				<li>Suffix '<strong>-medium</strong>' between 640 and 960 px display width</li>
-				<li>No suffix between 960 and 1280 px display width</li>
-				<li>Suffix '<strong>-wide</strong>' for display width greater 1280 px</li>
-			</ul>
+      <p>
+         
+      </p>
+      
+      <code>
+        &lt;<span class="tag">script</span> 
+         <span class="attr-name">src</span>=<span class="attr-val">"air.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+      </code>
+    
+      <code>
+          &lt;<span class="tag">script</span>&gt; <br/>
+          <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
+        <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-base'</span>, <br/> 
+        <span>&nbsp;</span> <span class="prop">321</span>: <span class="string">'-small'</span>, <br/>
+        <span>&nbsp;</span> <span class="prop">641</span>: <span class="string">'-medium'</span>, <br/>
+        <span>&nbsp;</span> <span class="prop">961</span>: <span class="string">''</span>, <br/>
+        <span>&nbsp;</span> <span class="prop">1280</span>: <span class="string">'-wide'</span> <br/>
+        }<span class="fn">)</span>; <br/>
+        &lt;/<span class="tag">script</span>&gt; 
+      </code>
+    
+      <p>Explanation</p>
+      
+      <ul>
+        <li>Suffix '<strong>-base</strong>' between 1 and 320 px display width</li>
+        <li>Suffix '<strong>-small</strong>' between 320 and 640 px display width</li>
+        <li>Suffix '<strong>-medium</strong>' between 640 and 960 px display width</li>
+        <li>No suffix between 960 and 1280 px display width</li>
+        <li>Suffix '<strong>-wide</strong>' for display width greater 1280 px</li>
+      </ul>
 
-		</article>
+    </article>
 
-	  <article>
-		
-			<h3>Author</h3>
-			
-			<p>Uli Preuss is a freelance </p>
-	
-		</article>
+    <article>
+    
+      <h3>Author</h3>
+      
+      <p>Uli Preuss is a freelance </p>
+  
+    </article>
 
-	</section>
-	
-	<aside>
-		<a href="http://github.com/up/air">
-			<img src="images/github-ribbon.png" alt="Fork me on GitHub" />
-		</a>
-	</aside>
+  </section>
+  
+  <aside>
+    <a href="http://github.com/up/air">
+      <img src="images/github-ribbon.png" alt="Fork me on GitHub" />
+    </a>
+  </aside>
   
   <script src="air.min.js"></script>
   <script>  
   //alert(window.innerWidth);
-	air.set({
-	  1: '-base',   // Smartphones (landscape)  
-	  321: '-small',   // Smartphones (landscape)  
-	  641: '-medium',  // Tablets (portrait)
-	  961: '',         // Default Image without suffix - Tablets (landscape), Netbooks, .. 
-	  1279: '-wide'    // Desktop and other wide displays
-	});
+  air.set({
+    1: '-base',   // Smartphones (landscape)  
+    321: '-small',   // Smartphones (landscape)  
+    641: '-medium',  // Tablets (portrait)
+    961: '',         // Default Image without suffix - Tablets (landscape), Netbooks, .. 
+    1279: '-wide'    // Desktop and other wide displays
+  });
   </script>
 
 </body>
