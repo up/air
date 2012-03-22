@@ -12,10 +12,10 @@
       } else {
         air.noscripts = noscripts;
       }
-      var display, res, dot, altattr, source, fileextension, imgpath, img, nos, $nos, parent, hasImg, hasAlt,
-        img_tag, attrs, attr_parts, attr_name, attr_value, attr_apos, attr_arr = [],
-        $noscripts = document.getElementsByTagName('noscript'), 
-        i = 0, length = noscripts.length, iWidth = window.innerWidth || document.body.offsetWidth;
+      var display, res, dot, extension, path, img, nos, $nos, parent, img_tag, 
+        attrs, attr_parts, attr_name, attr_value, attr_apos, attr_arr = [],
+        $noscripts = document.getElementsByTagName('noscript'), i = 0, 
+        length = noscripts.length, iWidth = window.innerWidth || document.body.offsetWidth;
         
       for (res in config) {
         if (iWidth >= parseInt(res, 10)) {
@@ -48,9 +48,9 @@
           
           if(attr_name === 'src') {
             dot = attr_value.lastIndexOf('.');
-            imgpath = attr_value.substring(0, dot);
-            fileextension = attr_value.substring(dot, attr_value.length);
-            img.src = imgpath + display + fileextension;           
+            path = attr_value.substring(0, dot);
+            extension = attr_value.substring(dot, attr_value.length);
+            img.src = path + display + extension;           
           } else {
             img[attr_name] = attr_value;           
           }
@@ -86,6 +86,7 @@
           req = new ActiveXObject('Microsoft.XMLHTTP');
         }
       }
+      
       if(req) {
         req.onreadystatechange = function() {
           if (req.readyState == 4 && req.status == 200){
