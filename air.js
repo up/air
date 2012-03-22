@@ -5,7 +5,7 @@
     noscripts: [],
     display: null,
 
-    addImages: function(config, resize, noscripts) {
+    loadImages: function(config, resize, noscripts) {
       
       if(!noscripts) {
         noscripts = air.noscripts;
@@ -91,7 +91,7 @@
           if (req.readyState == 4 && req.status == 200){
             data = req.responseText; 
             noscripts = data.match(/<noscript\b[^>]*>(?:(?=([^<]+))\1|<(?!noscript\b[^>]*>))*?<\/noscript>/gi);
-            air.addImages(config, resize, noscripts) ;               
+            air.loadImages(config, resize, noscripts) ;               
           }
         };
         req.open('GET', location.href, true);
@@ -103,7 +103,7 @@
     set: function(config, resize) {
             
       if(air.noscripts.length > 0) {
-        air.addImages(config, resize);
+        air.loadImages(config, resize);
       } else {
         air.xhr(config, resize);        
       }      
