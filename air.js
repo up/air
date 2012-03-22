@@ -5,6 +5,46 @@
     noscripts: [],
     display: null,
 
+    set: function(config, resize) {
+            
+      if(air.noscripts.length > 0) {
+        air.loadImages(config, resize);
+      } else {
+        air.xhr(config, resize);        
+      }      
+
+    },
+            
+    xhr: function(config, resize) {
+
+      var req, data, noscripts;
+
+      try {
+        req = new XMLHttpRequest();
+      } 
+      catch(e){
+        try {
+          req = new ActiveXObject('Msxml2.XMLHTTP');
+        }
+        catch(e2){
+          req = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+      }
+      
+      if(req) {
+        req.onreadystatechange = function() {
+          if (req.readyState == 4 && req.status == 200){
+            data = req.responseText; 
+            noscripts = data.match(/<noscript\b[^>]*>(?:(?=([^<]+))\1|<(?!noscript\b[^>]*>))*?<\/noscript>/gi);
+            air.loadImages(config, resize, noscripts) ;               
+          }
+        };
+        req.open('GET', location.href, true);
+        req.send();
+      }
+
+    },
+            
     loadImages: function(config, resize, noscripts) {
       
       if(!noscripts) {
@@ -69,46 +109,6 @@
         }
       }
       
-    },
-            
-    xhr: function(config, resize) {
-
-      var req, data, noscripts;
-
-      try {
-        req = new XMLHttpRequest();
-      } 
-      catch(e){
-        try {
-          req = new ActiveXObject('Msxml2.XMLHTTP');
-        }
-        catch(e2){
-          req = new ActiveXObject('Microsoft.XMLHTTP');
-        }
-      }
-      
-      if(req) {
-        req.onreadystatechange = function() {
-          if (req.readyState == 4 && req.status == 200){
-            data = req.responseText; 
-            noscripts = data.match(/<noscript\b[^>]*>(?:(?=([^<]+))\1|<(?!noscript\b[^>]*>))*?<\/noscript>/gi);
-            air.loadImages(config, resize, noscripts) ;               
-          }
-        };
-        req.open('GET', location.href, true);
-        req.send();
-      }
-
-    },
-            
-    set: function(config, resize) {
-            
-      if(air.noscripts.length > 0) {
-        air.loadImages(config, resize);
-      } else {
-        air.xhr(config, resize);        
-      }      
-
     },
             
     addEvent: function(type, fn) {
