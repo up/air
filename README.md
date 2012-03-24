@@ -1,9 +1,9 @@
-AIR - Adaptive Image Resizing
+AIR - Adaptive Image Replacement
 ====
 
 AIR is a JavaScript tool for loading different images depending on the display width.
 
-AIR is lightweight (1.36KB / 824 bytes gzipped) and easy to integrate.
+AIR is lightweight (1.36KB / 829 bytes gzipped) and easy to integrate.
 
 
 ## Source
