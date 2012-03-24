@@ -13,26 +13,26 @@
 </head>
 <body>
     
+
   <section>
 
+
     <header>
-       <h2><strong>AIR</strong> - <span>Adaptive Image Resizing</span></h2>
+       <h2><strong>AIR</strong> - <span>Adaptive Image Replacement</span></h2>
+      <p>
+        <strong>Designing for any device!</strong> AIR is a tiny tool that can significantly improve the mobile performance 
+        of your website - if you are using large images. 
+        Ideal for <strong>Responsive Web Design</strong> and the <strong>Mobile First</strong> approach.
+      </p>
+      <h5>
+        Resize and reload this page to <strong>see AIR in action</strong>.
+      </h5>
     </header>
   
-    <article>
-      
-      <p>
-        <strong>AIR</strong> is a tiny tool (specifically for the <strong>Responsive Design</strong> Approach) 
-        that can significantly improve the performance of the mobile version(s) of your website. 
-        Resize and reload this page to <strong>see AIR in action!</strong>
-      </p>
-      
-    </article>
-    
-    <figure>
+   <figure>
 
       <noscript>
-        <img src="images/airplane.jpg" alt="Airplane image" id="airplane" onclick="alert('xxx')" />
+        <img src="images/airplane.jpg" alt="Airplane image" id="airplane" />
       </noscript>
 
       <figcaption>Original Photo &copy; by Peter Kubalak (www.peterkubalak.com)</figcaption>
@@ -53,6 +53,10 @@
       <p>
         .. with optimized file size
       </p>
+      <p>
+        Note: AIR is intended for small and medium-sized pages with a limited number of adaptive pictures. 
+      </p>
+
           
     </article>
     
@@ -73,9 +77,6 @@
         <li>
           Easy to integrate and use
         </li>
-        <li>
-          Compatible with the following approaches: Resposive (Web) Design, Mobile First, Progressive Enhancement
-        </li>
       </ul>
     
     </article>
@@ -84,34 +85,45 @@
     
       <h3>Source</h3>
 
-      <p>Air's Git repo is available on GitHub, which can be browsed at:</p>
+      <p>Air's Git repo can be browsed at:</p>
       <code>
         https://github.com/up/air
       </code>
 
-      <p>.. and cloned with:</p>
+      <p>or cloned with:</p>
       <code>
         git clone git://github.com/up/air.git
       </code>
 
+      <p>or downloaded:</p>
+      <code>
+        https://github.com/up/air/zipball/master
+      </code>
+
+      <p class="download">
+        <a href="https://github.com/up/air/zipball/master">
+          <img src="images/btn-download.png" alt="Download Air" />
+        </a>
+      </p>    
+    
     </article>
     
     <article>
     
       <h3>Usage</h3>
 
-      <p>
+      <h4>
         <strong>Step 1</strong> - Wrap your 'img' tags into 'noscript' sections:
-      </p>
+      </h4>
 
       <code>
-        &lt;noscript&gt; <br/> 
-        <span>&nbsp;</span> &lt;img src="images/MYIMAGE1.jpg" alt="Alt text 1" class="thumb"/&gt; <br/> 
-        &lt;/noscript&gt; <br/> 
+        &lt;<span class="tag">noscript</span>&gt; <br/> 
+        <span>&nbsp;</span> &lt;<span class="tag">img</span> src=<span class="attr-val">"MYIMAGE1.jpg"</span> alt=<span class="attr-val">"TEXT"</span> class=<span class="attr-val">"thumb"</span>/&gt; <br/> 
+        &lt;/<span class="tag">noscript</span>&gt; <br/> 
         <br/> 
-        &lt;noscript&gt; <br/> 
-        <span>&nbsp;</span> &lt;img src="images/MYIMAGE2.jpg" alt="Alt text 2" onclick="alert('xxx')" /&gt; <br/> 
-        &lt;/noscript&gt; <br/> 
+        &lt;<span class="tag">noscript</span>&gt; <br/> 
+        <span>&nbsp;</span> &lt;<span class="tag">img</span> src=<span class="attr-val">"MYIMAGE2.jpg"</span> alt=<span class="attr-val">"TEXT"</span> /&gt; <br/> 
+        &lt;<span class="tag">/noscript</span>&gt; <br/> 
         <br/> 
         ..   
       </code>
@@ -122,19 +134,19 @@
   
       <br/>
 
-      <p>
+      <h4>
         <strong>Step 2</strong> - Include the 'air.min.js' to the end of your page body:
-      </p>
+      </h4>
 
       <code>
-        &lt;script src="air.min.js"&gt;&lt;/script&gt;
+        &lt;<span class="tag">script</span> src=<span class="attr-val">"air.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
       </code>
 
       <br/>
 
-      <p>
+      <h4>
         <strong>Step 3</strong> - Choose the suffixes and the corresponding display resolutions (See next examples).
-      </p>
+      </h4>
 
     </article>
     
@@ -222,12 +234,17 @@
   </section>
   
   <aside>
-    <a href="http://github.com/up/air">
-      <img src="images/github-ribbon.png" alt="Fork me on GitHub" />
-    </a>
+	  <div id="ribbon">
+	    <a href="http://github.com/up/air">
+	      <img src="images/github-ribbon.png" alt="Fork me on GitHub" />
+	    </a>
+	  </div>
+    <noscript>
+      <img src="images/bg-ballons.png" alt="" id="ballons" />
+    </noscript>
   </aside>
   
-  <script src="air.js"></script>
+  <script src="air.min.js"></script>
   <script>  
   //alert(window.innerWidth);
   air.set({

@@ -1,3 +1,9 @@
+/**
+  * AIR - Adaptive Image Resizing
+  * Copyright (c) 2012 Uli Preuss.
+  *
+*/
+
 (function(){
   
   var air = {
@@ -52,10 +58,11 @@
       } else {
         air.noscripts = noscripts;
       }
+      
       var display, res, dot, extension, path, img, nos, $nos, parent, img_tag, 
         attrs, attr_parts, attr_name, attr_value, attr_apos, attr_arr = [],
-        $noscripts = document.getElementsByTagName('noscript'), i = 0, 
-        length = noscripts.length, iWidth = window.innerWidth || document.body.offsetWidth;
+        $noscripts = document.getElementsByTagName('noscript'), i = 0, k = 0,
+        alength, nlength = noscripts.length, iWidth = window.innerWidth || document.body.offsetWidth;
         
       for (res in config) {
         if (iWidth >= parseInt(res, 10)) {
@@ -69,7 +76,8 @@
         air.display = display;
       }
       
-      for (; i < length; i = i + 1) {
+      for (; i < nlength; i++) {
+        
         nos = noscripts[i];
         $nos = $noscripts[i];
         
@@ -78,9 +86,11 @@
 
         img_tag = /<img[^>]+>/.exec(nos)[0];
         attrs = img_tag.match(/(\w+)=("[^<>"]*"|'[^<>']*'|"\w+)/gi);
+        alength = attrs.length;
         
-        for(i=0;i<attrs.length;i++) {
-          attr_parts = attrs[i].split('=');
+        for(k=0;k<alength;k++) {
+          
+          attr_parts = attrs[k].split('=');
           attr_name = attr_parts[0].toLowerCase();
           attr_value = attr_parts[1];
           attr_apos = attr_value.match(/"|'/);
@@ -94,6 +104,7 @@
           } else {
             img[attr_name] = attr_value;           
           }
+          
         }
                 
         if (!resize) {
