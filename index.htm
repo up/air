@@ -239,14 +239,17 @@
 	      <img src="images/github-ribbon.png" alt="Fork me on GitHub" />
 	    </a>
 	  </div>
-    <noscript>
-      <img src="images/bg-ballons.png" alt="" id="ballons" />
-    </noscript>
+	  <div id="bg2" style="display: none">
+	    <noscript>
+	      <img src="images/bg-ballons.png" alt="" id="ballons" />
+	    </noscript>
+	  </div>
   </aside>
   
   <script src="air.min.js"></script>
   <script>  
   //alert(window.innerWidth);
+  document.getElementById('bg2').style.display = "block";
   air.set({
     1: '-base',      // Smartphones (portrait)  
     321: '-small',   // Smartphones (landscape)  
