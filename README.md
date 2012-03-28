@@ -26,11 +26,6 @@ and cloned with:
     git clone git://github.com/up/air.git
 
 
-## Supported Browser
-
-Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
-
-
 ## Usage
 
 ### Step 1
