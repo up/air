@@ -1,9 +1,18 @@
 AIR - Adaptive Image Replacement
 ====
 
-AIR is a JavaScript tool for loading different images depending on the display width.
+A tiny tool that can significantly improve the mobile performance of your website by loading optimized images for different screens. 
+Works well with Responsive Web Design and the Mobile First approach. 
 
-AIR is lightweight (1.36KB / 829 bytes gzipped) and easy to integrate.
+##Summary
+
+AIR loads different images for different window sizes. You can decide how many alternative pictures you will offer and which breakpoints you will define. The ingredients: Javascript, XHR/Ajax, Regular Expressions and noscript elements.
+
+*Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
+*Framework-independent
+*Degrade gracefully to standard image when JavaScript is not active.
+*Lightweight (1.32KB / 811 bytes gzipped)
+*Easy to integrate and use
 
 
 ## Source
