@@ -12,9 +12,16 @@
   <![endif]-->
 </head>
 <body>
-    
+
+  <a id="top" name="top"></a>
 
   <section>
+	
+	  <nav>
+		  <a href="#summary">Summary</a>
+		  <a href="#source">Source</a>
+		  <a href="#usage">Usage</a>
+		</nav>
 
 
     <header>
@@ -37,10 +44,12 @@
       <figcaption>Original Photo &copy; by Peter Kubalak (www.peterkubalak.com)</figcaption>
 
     </figure>
+
+   <a id="summary" name="summary"></a>
     
     <article>
     
-      <h3>How does it work?</h3>
+      <h3>Summary</h3>
 
       <p>
         AIR loads different images for different window sizes. 
@@ -68,6 +77,8 @@
     
     </article>
     
+    <a id="source" name="source"></a>
+
     <article>
     
       <h3>Source</h3>
@@ -95,6 +106,8 @@
     
     </article>
     
+    <a id="usage" name="usage"></a>
+
     <article>
     
       <h3>Usage</h3>
@@ -116,7 +129,19 @@
       </code>
 
       <p>
-        Note: You can use any kinds of image types (jpg, png, gif, ..) and image attributes.
+        You can use any kinds of image types and attributes. 
+      </p>
+      <p>
+        <strong>Note</strong>: If you're having trouble with eventhandler, please make sure that 
+        you haven't mixed single and double quotation marks in attributes like: 
+      </p>
+      <code>
+        &lt;<span class="tag">img</span> .. onclick=<span class="attr-val">"alert('Hello World')"</span> /&gt;
+      </code>
+      <p>
+        You can solve the problem with 
+        '<a href="http://en.wikipedia.org/wiki/Unobtrusive_JavaScript">Unobtrusive JavaScript</a>' 
+        - which is always preferable :). 
       </p>
   
       <br/>
@@ -135,10 +160,7 @@
         <strong>Step 3</strong> - Choose the suffixes and the corresponding display resolutions (See next examples).
       </h4>
 
-    </article>
-    
-    <article>
-    
+      <br/>
       <h3>Example 1</h3>
 
       <p></p>
@@ -162,12 +184,37 @@
         <li><strong>MYIMAGE-mobile.jpg</strong>   (for screens between 1 and 1023 px)</li>
         <li><strong>MYIMAGE.jpg</strong>        (for screens greater 1024 px)</li>
       </ol>
+   
+		  <br/>
+		  <h3>Example 2</h3>
 
-    </article>
-    
-    <article>
-    
-      <h3>Example 2</h3>
+		  <p></p>
+  
+		  <code>
+		    &lt;<span class="tag">script</span>&gt; <br/>
+		    <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
+		    <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-smartphone'</span>, <br/> 
+		    <span>&nbsp;</span> <span class="prop">570</span>: <span class="string">'-tablet-small'</span>, <br/>
+		    <span>&nbsp;</span> <span class="prop">625</span>: <span class="string">'-tablet'</span>, <br/>
+		    <span>&nbsp;</span> <span class="prop">996</span>: <span class="string">''</span>, 
+		      <span class="comment">// Default (No Javascript, Netbooks, Notebooks, Wide Displays..)</span> <br/>
+		    }<span class="fn">)</span>; <br/>
+		    &lt;/<span class="tag">script</span>&gt; 
+		  </code>
+
+		  <br/>
+
+		  <p>You need 4 different versions of each image:</p>
+  
+		  <ol>
+		    <li><strong>MYIMAGE-smartphone.jpg</strong>   (for screens between 1 and 569 px)</li>
+		    <li><strong>MYIMAGE-tablet-small.jpg</strong> (for screens between 570 and 625 px)</li>
+		    <li><strong>MYIMAGE-tablet.jpg</strong>       (for screens between 626 and 996 px)</li>
+		    <li><strong>MYIMAGE.jpg</strong>              (for screens greater 996 px)</li>
+		  </ol>
+
+      <br/>
+      <h3>Example 3</h3>
 
       <p></p>
       
@@ -186,7 +233,7 @@
 
       <br/>
     
-      <p>Here you need 5 different versions of each image:</p>
+      <p>You need 5 different versions of each image:</p>
       
       <ol>
         <li><strong>MYIMAGE-base.jpg</strong>   (for screens between 1 and 320 px)</li>
@@ -195,26 +242,9 @@
         <li><strong>MYIMAGE.jpg</strong>        (for screens between 960 and 1280 px)</li>
         <li><strong>MYIMAGE-wide.jpg</strong>   (for screens greater 1280 px)</li>
       </ol>
-
+		
     </article>
-    
-    <article>
-    
-      <h3>Known Issues</h3>
-
-      <p>
-        <strong>Issue 1 - My image onclick eventhandler is gone ..</strong><br/><br/>
-        If you're having trouble with eventhandler, please make sure you haven't mixed single and double quotation marks in attributes like: 
-      </p>
-      <code>
-        &lt;img .. onclick="alert('Hello World')" /&gt;
-      </code>
-      <p>
-        You can solve the problem with 'Unobtrusive JavaScript' - which is always preferable ;). 
-      </p>
-    
-    </article>
-    
+        
     <footer>
       Copyright &copy; 2012 Uli Preuss.
     </footer>
@@ -234,9 +264,9 @@
 	  </div>
   </aside>
   
+  <script src="scroll.min.js"></script>
   <script src="air.min.js"></script>
   <script>  
-  //alert(window.innerWidth);
   document.getElementById('bg2').style.display = "block";
   air.set({
     1: '-base',      // Smartphones (portrait)  
@@ -244,7 +274,7 @@
     641: '-medium',  // Tablets (portrait)
     961: '',         // Default Image without suffix - Tablets (landscape), Netbooks, .. 
     1279: '-wide'    // Desktop and other wide displays
-  });
+  });  
   </script>
 
 </body>

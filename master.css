@@ -24,6 +24,57 @@ body {
   min-height: 100%;
 }
 
+nav {
+  position: absolute;
+  top: -2.8em;
+  background: #ccc;
+  -webkit-box-shadow: 0px 1px 2px rgba(30,18,5,0.5);
+  -moz-box-shadow: 0px 1px 2px rgba(30,18,5,0.5);
+  box-shadow: 0px 1px 2px rgba(30,18,5,0.5);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+nav a {
+  color: #777;
+  text-decoration: none;
+  padding: 2px;
+  margin: 0 10px;
+  display: inline-block;  
+}
+
+nav a:hover,
+nav a:focus {
+  color: #333;
+  text-decoration: underline;
+}
+a#top {
+  position: absolute;
+  top: 0;
+}
+a.top {
+  position: absolute;
+  right: 20px;
+}
+a.top:before {
+  content: "[";
+}
+a.top:after {
+  content: "]";
+}
+
+a {
+  text-decoration: none;
+  color: #777;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus {
+  color: #333;
+  text-decoration: underline;
+}
+
 figure { 
   margin: 0 0 3em;
 }
@@ -154,6 +205,7 @@ article {
   padding: 10px 25px;
   background : transparent url(images/bg-article.png) repeat 0 0; 
   */
+  position: relative;
   margin : 1.4em 0 2.8em; 
   border: 1px solid #AAA;
 }
@@ -218,6 +270,10 @@ footer {
   h5 { 
     padding-right: 24px;
     background-position : right -45px; 
+  }
+
+  nav, a.top {
+    display: none;
   }
 
 }
@@ -289,6 +345,11 @@ footer {
     padding-right: 28px;
     background-position : right -24px; 
   }
+  
+  nav, a.top {
+    display: inline-block;
+  }
+  
 
 }
 
