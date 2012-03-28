@@ -23,19 +23,8 @@
             
     xhr: function(config, resize) {
 
-      var req, data, noscripts;
-
-      try {
-        req = new XMLHttpRequest();
-      } 
-      catch(e){
-        try {
-          req = new ActiveXObject('Msxml2.XMLHTTP');
-        }
-        catch(e2){
-          req = new ActiveXObject('Microsoft.XMLHTTP');
-        }
-      }
+      var req = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"),
+        data, noscripts;
       
       if(req) {
         req.onreadystatechange = function() {
