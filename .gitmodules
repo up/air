@@ -1,0 +1,3 @@
+[submodule "assets/scroll"]
+path = assets/scroll
+url = git://github.com/up/scroll.git
