@@ -11,7 +11,7 @@ AIR loads different images for different window sizes. You can decide how many a
 *	Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
 *	Framework-independent
 *	Degrade gracefully to standard image when JavaScript is not active.
-*	Lightweight (1.32KB / 811 bytes gzipped)
+*	Lightweight
 *	Easy to integrate and use
 	
 
