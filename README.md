@@ -4,7 +4,7 @@ AIR - Adaptive Image Replacement
 A tiny tool that can significantly improve the mobile performance of your website by loading optimized images for different screens. 
 Works well with Responsive Web Design and the Mobile First approach. 
 
-##Summary
+##Introduction
 
 AIR loads different images for different window sizes. You can decide how many alternative pictures you will offer and which breakpoints you will define. The ingredients: Javascript, XHR/Ajax, Regular Expressions and noscript elements.
 
@@ -92,4 +92,6 @@ Choose the suffixes and the corresponding display resolutions:
 
 ## Copyright
 
-Copyright (c) 2012 Uli Preuss. See [LICENSE](https://github.com/up/air/blob/master/LICENSE.md) for details.
+Copyright (c) 2012 Uli Preuss. 
+
+Dual licensed under the [MIT license](http://github.com/up/air/blob/master/MIT-license.txt) and [GPL license](http://github.com/up/air/blob/master/GPL-license.txt).
