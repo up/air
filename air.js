@@ -1,7 +1,8 @@
 /**
   * AIR - Adaptive Image Resizing
-  * Copyright (c) 2012 Uli Preuss.
-  *
+  * http://github.com/up/air
+  * Copyright (c) 2012 Uli Preuss
+  * Dual licensed under the MIT and GPL
 */
 
 (function(){
