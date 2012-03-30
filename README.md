@@ -1,62 +1,67 @@
 AIR - Adaptive Image Replacement
 ====
 
-A tiny tool that can significantly improve the mobile performance of your website by loading optimized images for different screens. 
-Works well with Responsive Web Design and the Mobile First approach. 
+A tiny tool that can significantly improve the mobile performance of your website by loading optimized 
+images for different screens. Works well with the Responsive Web Design approach. 
 
 ##Introduction
 
-AIR loads different images for different window sizes. You can decide how many alternative pictures you will offer and which breakpoints you will define. The ingredients: Javascript, XHR/Ajax, Regular Expressions and noscript elements.
+AIR loads different images for different window sizes. Not only resized images or modified dimensions! You can decide how many alternative images you will offer and breakpoints you will define. The ingredients: Javascript, XHR/Ajax, Regular Expressions and noscript elements.
 
-*	Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
+*	Pure Front-End Solution
 *	Framework-independent
-*	Degrade gracefully to standard image when JavaScript is not active.
-*	Lightweight
+*	Degrades gracefully to standard image if JavaScript is not active.
+*	Includes onresize event handler (deactivatable)
+*	Lightweight (< 1 kb, Minified and Gzipped)
 *	Easy to integrate and use
-	
+*	Tested with Chrome 17, Firefox 11, Safari 5, Opera 11.6 and IE 7+8
+
 
 ## Source
 
-Air's Git repo is available on GitHub, which can be browsed at:
+The project is [hosted on GitHub](http://github.com/up/air/). You can report bugs and discuss features on the [issues page](http://10.0.1.2/~ulipreuss/air/github.com/up/air/issues) and clone the repository with:
 
-    https://github.com/up/air
+	git clone git://github.com/up/air.git
 
-and cloned with:
+### Downloads
 
-    git clone git://github.com/up/air.git
+*	[Development Version](http://raw.github.com/up/air/master/air.js) < 4 kb, Uncompressed
+*	[Production Version](http://raw.github.com/up/air/master/air.min.js) 	< 1 kb, Minified and Gzipped
+*	[Zip with example files](http://github.com/up/air/zipball/master) 	467 kb
 
 
 ## Usage
 
-### Step 1
-
-Wrap your 'img' tags into 'noscript' sections:
+### Step 1 - Wrap your images into 'noscript' sections. No need for special attributes. 
 
 	<noscript>
-	  <img src="images/test1.jpg" alt="Alt text 1" />
+	  <img src="MYIMAGE1.jpg" alt="TEXT" class="thumb" />
 	</noscript>
 	
 	<noscript>
-	  <img src="images/test2.jpg" alt="Alt text 2" />
+	  <img src="MYIMAGE1.jpg" alt="TEXT" />
 	</noscript> 
 	
 	..   
 	
-**Note**: You can use any kinds of image types (jpg, png, gif, ..)
+You can use any kinds of image types and attributes.
 
-### Step 2
+**Note**: If you're having trouble with eventhandler, please make sure that you haven't mixed single and double quotation marks in attributes like:
+	
+	<img .. onclick="alert('Hello World')" />
 
-Include the 'air.min.js' to the end of your page body:
+You can solve the problem with 'Unobtrusive JavaScript' - which is always preferable :).
+
+
+### Step 2 - Include the 'air.min.js' to the end of your page body: 
 
 	<script src="air.min.js"></script>
-	
-
-### Step 3
-
-Choose the suffixes and the corresponding display resolutions:
 
 
-##### Example 1:
+### Step 3 - Choose the suffixes and the corresponding display resolutions (See next examples). 
+
+
+#### Example 1:
 	<script>  
 	air.set({
 	  1: '-mobile',  // Mobile Displays 
