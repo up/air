@@ -6,7 +6,7 @@ images for different screens. Works well with the Responsive Web Design approach
 
 ##Introduction
 
-AIR loads different images for different window sizes. Not only resized images or modified dimensions! You can decide how many alternative images you will offer and breakpoints you will define. The ingredients: Javascript, XHR/Ajax, Regular Expressions and noscript elements.
+AIR loads different images for different window sizes. Not only resized images or modified dimensions! You can decide how many alternative images you will offer and breakpoints you will define. **The ingredients**: Javascript, XHR/Ajax, Regular Expressions and noscript elements.
 
 *	Pure Front-End Solution
 *	Framework-independent
@@ -35,11 +35,11 @@ The project is [hosted on GitHub](http://github.com/up/air/). You can report bug
 ### Step 1 - Wrap your images into 'noscript' sections. No need for special attributes. 
 
 	<noscript>
-	  <img src="MYIMAGE1.jpg" alt="TEXT" class="thumb" />
+	  <img src="MYIMAGE1.jpg" alt="TEXT 1" class="thumb" />
 	</noscript>
 	
 	<noscript>
-	  <img src="MYIMAGE1.jpg" alt="TEXT" />
+	  <img src="MYIMAGE2.jpg" alt="TEXT 2" />
 	</noscript> 
 	
 	..   
@@ -58,7 +58,7 @@ You can solve the problem with 'Unobtrusive JavaScript' - which is always prefer
 	<script src="air.min.js"></script>
 
 
-### Step 3 - Choose the suffixes and the corresponding display resolutions (See next examples). 
+### Step 3 - Choose the suffixes and the corresponding display resolutions (See examples). 
 
 
 #### Example 1:
