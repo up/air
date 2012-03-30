@@ -19,7 +19,7 @@ AIR loads different images for different window sizes. Not only resized images o
 
 ## Source
 
-The project is [hosted on GitHub](http://github.com/up/air/). You can report bugs and discuss features on the [issues page](http://10.0.1.2/~ulipreuss/air/github.com/up/air/issues) and clone the repository with:
+The project is [hosted on GitHub](http://github.com/up/air/). You can report bugs and discuss features on the [issues page](http://github.com/up/air/issues) and clone the repository with:
 
 	git clone git://github.com/up/air.git
 
