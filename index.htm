@@ -28,7 +28,7 @@
        <h2><strong>AIR</strong> - <span>Adaptive Image Replacement</span></h2>
       <p>
         A tiny tool that can significantly improve the mobile performance of your website by loading optimized images for different screens.
-        Works well with <strong>Responsive Web Design</strong> and the <strong>Mobile First</strong> approach.
+        Works well with the <strong>Responsive Web Design</strong> approach.
       </p>
       <h5>
         Resize and reload this page to <strong>see AIR in action</strong>.
@@ -59,22 +59,25 @@
 
       <ul>
         <li>
-          Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
+          Pure Front-End Solution
         </li>
         <li>
           Framework-independent
         </li>
         <li>
-          Pure Front-End Solution (Back-End independent)
+          Degrades gracefully to standard image if JavaScript is not active.
         </li>
         <li>
-          Degrade gracefully to standard image when JavaScript is not active.
+          Includes onresize event handler (deactivatable)
         </li>
         <li>
-          Lightweight
+          Lightweight (&lt; 1 kb, Minified and Gzipped)
         </li>
         <li>
           Easy to integrate and use
+        </li>
+        <li>
+          Tested with Chrome 17, Firefox 11, Safari 5, IE 7+8
         </li>
       </ul>
     
@@ -188,8 +191,6 @@
 
       <br/>
       <h3>Example 1</h3>
-
-      <p></p>
       
       <code>
         &lt;<span class="tag">script</span>&gt; <br/>
@@ -199,6 +200,25 @@
         <span>&nbsp;</span> <span class="prop">1024</span>: <span class="string">''</span> 
         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Desktop Displays</span> <br/> 
         }<span class="fn">)</span>; <br/>
+        &lt;/<span class="tag">script</span>&gt; 
+      </code>
+
+      <br/>
+    
+      <p>
+	      <strong>Note</strong>: If you want to deactivate the onresize event handler, 
+	      please add 'true' as a second argument:
+	    </p>
+
+      <code>
+        &lt;<span class="tag">script</span>&gt; <br/>
+        <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
+        <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-mobile'</span>, 
+          <span class="comment">// Mobile Displays</span> <br/> 
+        <span>&nbsp;</span> <span class="prop">1024</span>: <span class="string">''</span> 
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Desktop Displays</span> <br/> 
+        }, <span class="bool">true</span><span class="fn">)</span>; 
+          <span class="comment">// Deactivate onresize event handler</span><br/>
         &lt;/<span class="tag">script</span>&gt; 
       </code>
 
@@ -222,7 +242,7 @@
 		    <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-smartphone'</span>, <br/> 
 		    <span>&nbsp;</span> <span class="prop">570</span>: <span class="string">'-tablet-small'</span>, <br/>
 		    <span>&nbsp;</span> <span class="prop">625</span>: <span class="string">'-tablet'</span>, <br/>
-		    <span>&nbsp;</span> <span class="prop">996</span>: <span class="string">''</span>, 
+		    <span>&nbsp;</span> <span class="prop">996</span>: <span class="string">''</span>
 		      <span class="comment">// Default (No Javascript, Netbooks, Notebooks, Wide Displays..)</span> <br/>
 		    }<span class="fn">)</span>; <br/>
 		    &lt;/<span class="tag">script</span>&gt; 
@@ -294,7 +314,7 @@
   </aside>
   
   <script src="https://raw.github.com/up/scroll/master/scroll.min.js"></script>
-  <script src="air.min.js"></script>
+  <script src="air.js"></script>
   <script>  
   document.getElementById('bg2').style.display = "block";
   air.set({

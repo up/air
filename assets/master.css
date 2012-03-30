@@ -185,6 +185,7 @@ code {
   color: #555;
   line-height : 1.2; 
   margin : .55em 0;
+  font-size : 1.2em;
 }
 
 code .attr-name,
@@ -202,6 +203,11 @@ code .string {
 code .comment { 
   color: #1A4049;
 }
+code .bool { 
+  color: #C63;
+}
+
+
 
 section {
   position: relative;
@@ -276,6 +282,7 @@ footer {
   
   code { 
     padding: 5px;
+    font-size : 1em;
   }
   
   h5 { 
@@ -317,6 +324,7 @@ footer {
   }
 
   code { 
+    font-size : 1.1em;
     padding: 7px 10px;
   }
 
@@ -350,6 +358,7 @@ footer {
 
   code { 
     padding: 10px 20px;
+    font-size : 1.2em;
   }
   
   aside img#ballons {
