@@ -5,6 +5,6 @@ Thumbs.db
 # TextMate Project Files
 *.tm*
 
-# Locale Development, Build and Release Folders
+# Locale Development (Files and Folders)
 # starting with an unterscore
-\_*/
+\_*
