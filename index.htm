@@ -23,11 +23,11 @@
 		  <a href="#usage">Usage</a>
 		</nav>
 
-
     <header>
        <h2><strong>AIR</strong> - <span>Adaptive Image Replacement</span></h2>
       <p>
-        A tiny tool that can significantly improve the mobile performance of your website by loading optimized images for different screens.
+        A tiny tool that can significantly improve the mobile performance of your website by 
+        loading optimized images for different screens.
         Works well with the <strong>Responsive Web Design</strong> approach.
       </p>
       <h5>
@@ -53,8 +53,11 @@
 
       <p>
         AIR loads different images for different window sizes. Not only resized images or modified dimensions!
-        You can decide how many alternative images you will offer and breakpoints you will define.      
-        <strong>The ingredients</strong>: Javascript, XHR/Ajax, Regular Expressions and noscript elements.     
+        You can decide how many alternative images you will offer and breakpoints you will define.
+      </p>
+      <p>      
+        <strong>The ingredients</strong>: Javascript, XHR/Ajax, Regular Expressions and noscript elements. No
+        user agent sniffing, cookies, dynamically-injected base tags or server-side scripts.
       </p>
 
       <ul>
@@ -147,11 +150,11 @@
 
       <code>
         &lt;<span class="tag">noscript</span>&gt; <br/> 
-        <span>&nbsp;</span> &lt;<span class="tag">img</span> src=<span class="attr-val">"MYIMAGE1.jpg"</span> alt=<span class="attr-val">"TEXT"</span> class=<span class="attr-val">"thumb"</span>/&gt; <br/> 
+        <span>&nbsp;</span> &lt;<span class="tag">img</span> src=<span class="attr-val">"MYIMAGE1.jpg"</span> alt=<span class="attr-val">"TEXT 1"</span> class=<span class="attr-val">"thumb"</span>/&gt; <br/> 
         &lt;/<span class="tag">noscript</span>&gt; <br/> 
         <br/> 
         &lt;<span class="tag">noscript</span>&gt; <br/> 
-        <span>&nbsp;</span> &lt;<span class="tag">img</span> src=<span class="attr-val">"MYIMAGE2.jpg"</span> alt=<span class="attr-val">"TEXT"</span> /&gt; <br/> 
+        <span>&nbsp;</span> &lt;<span class="tag">img</span> src=<span class="attr-val">"MYIMAGE2.jpg"</span> alt=<span class="attr-val">"TEXT 2"</span> /&gt; <br/> 
         &lt;<span class="tag">/noscript</span>&gt; <br/> 
         <br/> 
         ..   
@@ -190,15 +193,16 @@
       </h4>
 
       <br/>
-      <h3>Example 1</h3>
+      <h3>Examples 1 - 3</h3>
       
       <code>
         &lt;<span class="tag">script</span>&gt; <br/>
         <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
-        <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-mobile'</span>, 
-          <span class="comment">// Mobile Displays</span> <br/> 
-        <span>&nbsp;</span> <span class="prop">1024</span>: <span class="string">''</span> 
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Desktop Displays</span> <br/> 
+        <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-small-screen'</span>, 
+          <span class="comment">// Small screens</span> <br/> 
+        <span>&nbsp;</span> <span class="prop">480</span>: <span class="string">''</span> 
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span class="comment">// .. other screens</span> <br/> 
         }<span class="fn">)</span>; <br/>
         &lt;/<span class="tag">script</span>&gt; 
       </code>
@@ -206,29 +210,51 @@
       <br/>
     
       <p>
-	      <strong>Note</strong>: If you want to deactivate the onresize event handler, 
-	      please add 'true' as a second argument:
+	      .. or if you prefer the 'Mobile First' approach:
 	    </p>
 
       <code>
         &lt;<span class="tag">script</span>&gt; <br/>
         <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
-        <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-mobile'</span>, 
-          <span class="comment">// Mobile Displays</span> <br/> 
-        <span>&nbsp;</span> <span class="prop">1024</span>: <span class="string">''</span> 
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Desktop Displays</span> <br/> 
+        <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">''</span>, 
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="comment">// Small screens</span> <br/> 
+        <span>&nbsp;</span> <span class="prop">480</span>: <span class="string">'-nomobile'</span> 
+        <span class="comment">// .. other screens</span> <br/> 
+        }<span class="fn">)</span>; <br/>
+        &lt;/<span class="tag">script</span>&gt; 
+      </code>
+      <br/>
+    
+      <p>
+	      If you want to deactivate the default activated onresize event handler, add 'true' as a second argument:
+	    </p>
+
+      <code>
+        &lt;<span class="tag">script</span>&gt; <br/>
+        <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
+        <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">''</span>, 
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="comment">// Small screens</span> <br/> 
+        <span>&nbsp;</span> <span class="prop">1024</span>: <span class="string">'-wide'</span> 
+        <span class="comment">// Wide screens</span> <br/> 
         }, <span class="bool">true</span><span class="fn">)</span>; 
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <span class="comment">// Deactivate onresize event handler</span><br/>
         &lt;/<span class="tag">script</span>&gt; 
       </code>
 
       <br/>
     
-      <p>In this example, you need 2 different versions of each image:</p>
+      <p>In each of these examples, you need 2 different versions of each image like:</p>
       
       <ol>
-        <li><strong>MYIMAGE-mobile.jpg</strong>   (for screens between 1 and 1023 px)</li>
-        <li><strong>MYIMAGE.jpg</strong>        (for screens greater 1024 px)</li>
+        <li><strong>MYIMAGE.png</strong> and</li>
+        <li>
+	        <strong>MYIMAGE-small-screen.png</strong> or <br/> 
+	        <strong>MYIMAGE-nomobile.png</strong> or <br/> 
+	        <strong>MYIMAGE-wide.png</strong>
+	      </li>
       </ol>
    
 		  <br/>
