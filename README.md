@@ -146,7 +146,7 @@ Air offers a small debugging function: You can simply check if all necessary ima
 	...
 	</script>
 
-Air tries to load the images for all screens. If one or more images are not found, you can see correlating error messages on the console, e.g. Firebug:
+Air tries to load the images for all screens (as a background job). If one or more images are not found, you can see correlating error messages on the console, e.g. Firebug:
 
 	"NetworkError: 404 Not Found - http://example.com/MYIMAGE1-base.jpg"
 	"NetworkError: 404 Not Found - http://example.com/MYIMAGE2-wide.jpg"
