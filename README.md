@@ -61,7 +61,7 @@ You can solve the problem with 'Unobtrusive JavaScript' - which is always prefer
 	<script src="air.min.js"></script>
 
 
-### Step 3 - Select the breakpoints for any number of display resolutions, and the appropriate file suffixes. 
+### Step 3 - Select the breakpoints for any number of display resolutions, and the appropriate suffixes. 
 
 There are many differents screen-widths 
 (see [list of cellphone screens](http://cartoonized.net/cellphone-screen-resolution.php)) and so no general recommendations for breakpoints. Here are some of the major:
