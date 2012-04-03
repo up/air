@@ -61,7 +61,7 @@ You can solve the problem with 'Unobtrusive JavaScript' - which is always prefer
 	<script src="air.min.js"></script>
 
 
-### Step 3 - Select the breakpoints for any number of display resolutions, and the appropriate file suffixes. There are no specifications for both. 
+### Step 3 - Select the breakpoints for any number of display resolutions, and the appropriate file suffixes. 
 
 
 #### Examples 1 - 3
@@ -93,8 +93,8 @@ If you want to deactivate the default activated onresize event handler, add 'tru
 
 In each of these examples, you need two different versions of each image like:
 
-*	MYIMAGE.png and
-*	MYIMAGE-small-screen.png or <br/>MYIMAGE-nomobile.png or <br/>MYIMAGE-wide.png
+1.	MYIMAGE.png and
+2.	MYIMAGE-small-screen.png or <br/>MYIMAGE-nomobile.png or <br/>MYIMAGE-wide.png
 
 
 ##### Example 4
