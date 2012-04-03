@@ -63,7 +63,14 @@ You can solve the problem with 'Unobtrusive JavaScript' - which is always prefer
 
 ### Step 3 - Select the breakpoints for any number of display resolutions, and the appropriate file suffixes. 
 
+There are many differents screen-widths and so no general recommendations for breakpoints. Here are some of the major:
 
+	1440px /* Popular Laptop size, fullscreen 15" MacBook Pro */
+	1030px /* iPad landscape */
+	770px  /* iPad portait */
+	480px  /* Many mobile devices in landscape */
+	320px  /* Most mobile devices in portrait. */
+	
 #### Examples 1 - 3
 
 	<script>
