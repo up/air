@@ -16,13 +16,14 @@
   <a id="top" name="top"></a>
 
   <section>
-	
-	  <nav>
-		  <a href="#introduction">Introduction</a>
-		  <a href="#source">Source</a>
-		  <a href="#usage">Usage</a>
-		  <a href="#issues">Issues</a>
-		</nav>
+  
+    <nav>
+      <a href="#introduction">Introduction</a>
+      <a href="#source">Source</a>
+      <a href="#usage">Usage</a>
+      <a href="#check">Check Images</a>
+      <a href="#feedback">Feedback</a>
+    </nav>
 
     <header>
        <h2><strong>AIR</strong> - <span>Adaptive Image Replacement</span></h2>
@@ -42,7 +43,10 @@
         <img src="assets/images/airplane.jpg" alt="Airplane image" />
       </noscript>
 
-      <figcaption>Original Photo &copy; by Peter Kubalak (www.peterkubalak.com)</figcaption>
+      <figcaption>
+        Original Photo &copy; by 
+        <a href="http://peterkubalak.com/sport/redbull-air-race-2/">Peter Kubalak</a>
+      </figcaption>
 
     </figure>
 
@@ -59,31 +63,17 @@
       </p>
       <p>      
         <strong>The ingredients</strong>: Javascript, XHR/Ajax, Regular Expressions and noscript elements. No
-        user agent sniffing, cookies, dynamically-injected base tags or server-side scripts.
+        user agent sniffing, cookies, canvas elements, dynamically-injected base tags or server-side scripts.
       </p>
 
       <ul>
-        <li>
-          Pure Front-End Solution
-        </li>
-        <li>
-          Framework-independent
-        </li>
-        <li>
-          Degrades gracefully to standard image if JavaScript is not active.
-        </li>
-        <li>
-          Includes onresize event handler (deactivatable)
-        </li>
-        <li>
-          Lightweight (&lt; 1 kb, Minified and Gzipped)
-        </li>
-        <li>
-          Easy to integrate and use
-        </li>
-        <li>
-          Tested with Chrome 17, Firefox 11, Safari 5, Opera 11.6 and IE 7+8
-        </li>
+        <li>Pure front-end solution</li>
+        <li>Framework-independent</li>
+        <li>Degrades gracefully to standard image if JavaScript is not active.</li>
+        <li>Includes onresize event handler (deactivatable)</li>
+        <li>Lightweight (&lt; 1 kb, Minified and Gzipped)</li>
+        <li>Easy to integrate and use</li>
+        <li>Tested with Chrome 17, Firefox 11, Safari 5, Opera 11.6 and IE 7+8</li>
       </ul>
     
     </article>
@@ -95,46 +85,48 @@
       <h3>Source</h3>
 
       <p>
-	      The project is
-	      <a href="http://github.com/up/air/">hosted on GitHub</a>.
-	      You can clone the repository with:</p>
+        The project is
+        <a href="http://github.com/up/air/">hosted on GitHub</a>.
+        You can clone the repository with:
+      </p>
+      
       <code>
         git clone git://github.com/up/air.git
       </code>
 
       <br/>
 
-			<h4>Downloads <i style="padding-left: 12px; font-size: 12px;">(Right-click, and use "Save As")</i></h4>
+      <h4>Downloads <i style="padding-left: 12px; font-size: 12px;">(Right-click, and use "Save As")</i></h4>
 
-	    <table>
-			  <tbody>
-				  <tr>
-			      <td>
-				      <a href="http://raw.github.com/up/air/master/air.js">Development Version</a>
-				    </td>
-			      <td>
-				      <i>&lt; 4 kb, Uncompressed</i>
-				    </td>
-			    </tr>
-			    <tr>
-			      <td>
-				      <a href="http://raw.github.com/up/air/master/air.min.js">Production Version</a>
-				    </td>
-			      <td>
-				      <i>&lt; 1 kb, Minified and Gzipped</i>
-				    </td>
-			    </tr>
-			    <tr>
-			      <td>
-				      <a href="http://github.com/up/air/zipball/master">Zip with example files</a>
-				    </td>
-			      <td>
-				      <i>467 kb</i>
-				    </td>
-			    </tr>
-			  </tbody>
-			</table>
-			
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="http://raw.github.com/up/air/master/air.js">Development Version</a>
+            </td>
+            <td>
+              <i>&lt; 4 kb, Uncompressed</i>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="http://raw.github.com/up/air/master/air.min.js">Production Version</a>
+            </td>
+            <td>
+              <i>&lt; 1 kb, Minified and Gzipped</i>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="http://github.com/up/air/zipball/master">Zip with example files</a>
+            </td>
+            <td>
+              <i>467 kb</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
       <br/>
 
     </article>
@@ -190,10 +182,24 @@
       <br/>
 
       <h4>
-        <strong>Step 3</strong> - Choose the suffixes and the corresponding display resolutions (See next examples).
+        <strong>Step 3</strong> - Select the breakpoints for any number of display resolutions, and the appropriate 
+        file suffixes. There are no specifications for both.
       </h4>
 
+      <p>
+      	There are many differents screen-widths and so no general recommendations for breakpoints. Here are some of the major:
+      </p>
+
+      <code>
+				1440px /* Popular Laptop size, fullscreen 15" MacBook Pro */ <br/>
+				1030px /* iPad landscape */ <br/>
+				770px  /* iPad portait */ <br/>
+				480px  /* Many mobile devices in landscape */ <br/>
+				320px  /* Most mobile devices in portrait. */
+		  </code>
+		
       <br/>
+
       <h3>Examples 1 - 3</h3>
       
       <code>
@@ -211,8 +217,8 @@
       <br/>
     
       <p>
-	      .. or if you prefer the 'Mobile First' approach:
-	    </p>
+        .. or if you prefer the 'Mobile First' approach:
+      </p>
 
       <code>
         &lt;<span class="tag">script</span>&gt; <br/>
@@ -228,8 +234,8 @@
       <br/>
     
       <p>
-	      If you want to deactivate the default activated onresize event handler, add 'true' as a second argument:
-	    </p>
+        If you want to deactivate the default activated onresize event handler, add 'true' as a second argument:
+      </p>
 
       <code>
         &lt;<span class="tag">script</span>&gt; <br/>
@@ -247,50 +253,48 @@
 
       <br/>
     
-      <p>In each of these examples, you need 2 different versions of each image like:</p>
+      <p>In each of these examples, you need two different versions of each image like:</p>
       
       <ol>
         <li><strong>MYIMAGE.png</strong> and</li>
         <li>
-	        <strong>MYIMAGE-small-screen.png</strong> or <br/> 
-	        <strong>MYIMAGE-nomobile.png</strong> or <br/> 
-	        <strong>MYIMAGE-wide.png</strong>
-	      </li>
+          <strong>MYIMAGE-small-screen.png</strong> or <br/> 
+          <strong>MYIMAGE-nomobile.png</strong> or <br/> 
+          <strong>MYIMAGE-wide.png</strong>
+        </li>
       </ol>
    
-		  <br/>
-		  <h3>Example 4</h3>
+      <br/>
+      <h3>Example 4</h3>
 
-		  <p></p>
+      <p></p>
   
-		  <code>
-		    &lt;<span class="tag">script</span>&gt; <br/>
-		    <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
-		    <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-smartphone'</span>, <br/> 
-		    <span>&nbsp;</span> <span class="prop">570</span>: <span class="string">'-tablet-small'</span>, <br/>
-		    <span>&nbsp;</span> <span class="prop">625</span>: <span class="string">'-tablet'</span>, <br/>
-		    <span>&nbsp;</span> <span class="prop">996</span>: <span class="string">''</span>
-		      <span class="comment">// Default (No Javascript, Netbooks, Notebooks, Wide Displays..)</span> <br/>
-		    }<span class="fn">)</span>; <br/>
-		    &lt;/<span class="tag">script</span>&gt; 
-		  </code>
+      <code>
+        &lt;<span class="tag">script</span>&gt; <br/>
+        <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
+        <span>&nbsp;</span> <span class="prop">1</span>: <span class="string">'-smartphone'</span>, <br/> 
+        <span>&nbsp;</span> <span class="prop">570</span>: <span class="string">'-tablet-small'</span>, <br/>
+        <span>&nbsp;</span> <span class="prop">625</span>: <span class="string">'-tablet'</span>, <br/>
+        <span>&nbsp;</span> <span class="prop">996</span>: <span class="string">''</span>
+          <span class="comment">// Default (No Javascript, Netbooks, Notebooks, Wide Displays..)</span> <br/>
+        }<span class="fn">)</span>; <br/>
+        &lt;/<span class="tag">script</span>&gt; 
+      </code>
 
-		  <br/>
+      <br/>
 
-		  <p>You need 4 different versions of each image:</p>
+      <p>You need four different versions of each image:</p>
   
-		  <ol>
-		    <li><strong>MYIMAGE-smartphone.jpg</strong>   (for screens between 1 and 569 px)</li>
-		    <li><strong>MYIMAGE-tablet-small.jpg</strong> (for screens between 570 and 625 px)</li>
-		    <li><strong>MYIMAGE-tablet.jpg</strong>       (for screens between 626 and 996 px)</li>
-		    <li><strong>MYIMAGE.jpg</strong>              (for screens greater 996 px)</li>
-		  </ol>
+      <ol>
+        <li><strong>MYIMAGE-smartphone.jpg</strong>   (for screens between 1 and 569 px)</li>
+        <li><strong>MYIMAGE-tablet-small.jpg</strong> (for screens between 570 and 625 px)</li>
+        <li><strong>MYIMAGE-tablet.jpg</strong>       (for screens between 626 and 996 px)</li>
+        <li><strong>MYIMAGE.jpg</strong>              (for screens greater 996 px)</li>
+      </ol>
 
       <br/>
       <h3>Example 5</h3>
 
-      <p></p>
-      
       <code>
         &lt;<span class="tag">script</span>&gt; <br/>
         <span class="obj">air</span>.<span class="fn">set(</span>{ <br/>
@@ -306,7 +310,7 @@
 
       <br/>
     
-      <p>You need 5 different versions of each image:</p>
+      <p>You need five different versions of each image:</p>
       
       <ol>
         <li><strong>MYIMAGE-base.jpg</strong>   (for screens between 1 and 320 px)</li>
@@ -315,54 +319,90 @@
         <li><strong>MYIMAGE.jpg</strong>        (for screens between 960 and 1280 px)</li>
         <li><strong>MYIMAGE-wide.jpg</strong>   (for screens greater 1280 px)</li>
       </ol>
-		
+    
     </article>
 
-    <a id="issues" name="issues"></a>
+    <a id="check" name="check"></a>
 
     <article>
 
-      <h3>Issues</h3>
+      <h3>Check Images</h3>
 
-				<p>
-					You can see and report bugs and discuss features on the
-		      <a href="github.com/up/air/issues">github issues page</a>.
-		    </p>
+        <p>
+          Air offers a small debugging function: You can simply check if all necessary images are exists.
+        </p>
+
+        <code>
+          &lt;<span class="tag">script</span>&gt; <br/>
+          <span class="obj">air</span>.<span class="fn">check()</span>; <br/>
+          ... <br/>
+          &lt;/<span class="tag">script</span>&gt; 
+        </code>
+  
+        <br/>
+  
+        <p>
+          Air tries to load the images for all screens (as a background job). 
+          If one or more images are not found, you can see correlating error messages on the console, e.g. Firebug:
+        </p>
+
+        <code>
+          <span class="string">
+            "NetworkError: 404 Not Found - http://example.com/MYIMAGE1-base.jpg" <br/>
+            "NetworkError: 404 Not Found - http://example.com/MYIMAGE2-wide.jpg"
+          </span> 
+        </code>
+  
+    </article>
+
+    <a id="feedback" name="feedback"></a>
+
+    <article>
+
+      <h3>Any feedback is welcome!</h3>
+
+      <p>
+        Please report bugs and post your suggestions for improvements or new features on the
+        <a href="http://github.com/up/air/issues">github issues page</a>.
+      </p>
 
     </article>
 
     <footer>
-			AIR is dual licensed under the <a href="http://github.com/up/air/blob/master/MIT-license.txt">MIT license</a> 
-			and <a href="http://github.com/up/air/blob/master/GPL-license.txt">GPL license</a>.
-			<br/>
+      AIR is dual licensed under the <a href="http://github.com/up/air/blob/master/MIT-license.txt">MIT license</a> 
+      and <a href="http://github.com/up/air/blob/master/GPL-license.txt">GPL license</a>.
+      <br/>
       Copyright &copy; 2012 Uli Preuss
     </footer>
       
   </section>
   
   <aside>
-	  <div id="ribbon">
-	    <a href="http://github.com/up/air">
-	      <img src="assets/images/github-ribbon.png" alt="Fork me on GitHub" />
-	    </a>
-	  </div>
-	  <div id="bg2" style="display: none">
-	    <noscript>
-	      <img src="assets/images/bg-ballons.png" alt="" id="ballons" />
-	    </noscript>
-	  </div>
+    <div id="ribbon">
+      <a href="http://github.com/up/air">
+        <img src="assets/images/github-ribbon.png" alt="Fork me on GitHub" />
+      </a>
+    </div>
+    <div id="bg-ballons" style="display: none">
+      <noscript>
+        <img src="assets/images/bg-ballons.png" alt="" id="ballons" />
+      </noscript>
+    </div>
   </aside>
   
   <script src="https://raw.github.com/up/scroll/master/scroll.min.js"></script>
-  <script src="air.js"></script>
+  <script src="air.min.js"></script>
   <script>  
-  document.getElementById('bg2').style.display = "block";
+  document.getElementById('bg-ballons').style.display = "block";
+  
+  //air.check();  
+  
   air.set({
     1: '-base',      // Smartphones (portrait)  
     321: '-small',   // Smartphones (landscape)  
     641: '-medium',  // Tablets (portrait)
     961: '',         // Default Image without suffix - Tablets (landscape), Netbooks, .. 
-    1279: '-wide'    // Desktop and other wide displays
+    1281: '-wide'    // Desktop and other wide displays
   });  
   </script>
 

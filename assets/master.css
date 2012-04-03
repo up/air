@@ -39,7 +39,7 @@ nav a {
   color: #777;
   text-decoration: none;
   padding: 2px;
-  margin: 0 10px;
+  margin: 0 3px;
   display: inline-block;  
 }
 
@@ -61,10 +61,10 @@ a.top:focus {
   text-decoration: none;
 }
 a.top:before {
-  content: "[";
+  content: "[ ";
 }
 a.top:after {
-  content: "]";
+  content: " ]";
 }
 
 a {
@@ -229,6 +229,7 @@ aside #ribbon {
   position: absolute; 
   top: 0; 
   right: 0; 
+  z-index: 1001;
 }
 aside img#ballons {
   position: absolute;
@@ -249,8 +250,8 @@ footer {
 
 /* MEDIA QUERIES */
 
-/*320px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 320px) {
+/*321px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 321px) {
 
   body { 
     font-size: 80%;
@@ -345,8 +346,8 @@ footer {
   
 }
 
-/*960px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 960px) {
+/*961px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 961px) {
 
   aside #ribbon img {
     width: 137px;
@@ -380,8 +381,8 @@ footer {
   
 }
 
-/*1279px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 1279px) {
+/*1281px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 1281px) {
 
   body { 
     font-size:110%;
