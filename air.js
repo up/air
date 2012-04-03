@@ -10,16 +10,22 @@
   var air = {
     
     noscripts: [],
+    images: [],
     display: null,
-
-    set: function(config, resize) {
+    checkImages: false,
             
+    set: function(config, resize) {
+                  
       if(air.noscripts.length > 0) {
         air.loadImages(config, resize);
       } else {
         air.xhr(config, resize);        
       }      
 
+    },
+            
+    check: function() {              
+      air.checkImages = true;   
     },
             
     xhr: function(config, resize) {
@@ -90,7 +96,10 @@
             dot = attr_value.lastIndexOf('.');
             path = attr_value.substring(0, dot);
             extension = attr_value.substring(dot, attr_value.length);
-            img.src = path + display + extension;           
+            img.src = path + display + extension;
+            if(air.checkImages) {
+              air.images.push([path, extension]);        
+            }
           } else {
             img[attr_name] = attr_value;           
           }
@@ -107,6 +116,17 @@
 
         } else {
           parent.replaceChild(img, $nos.previousSibling);
+        }
+                
+      }
+      
+      if(air.checkImages) {
+        for(i=0;i<air.images.length;i++) {
+          path = air.images[i][0];
+          extension = air.images[i][1];
+          for (res in config) {
+            new Image().src = path + config[res] + extension;
+          }          
         }
       }
       
@@ -128,5 +148,6 @@
   
   window['air'] = air;
   window['air']['set'] = air.set;
+  window['air']['check'] = air.check;
    
 }());
