@@ -11,7 +11,7 @@
     
     noscripts: [],
     _images: [],
-    display: null,
+    _display: null,
     checkImages: false,
             
     set: function(config, resize) {
@@ -55,20 +55,20 @@
         air.noscripts = noscripts;
       }
       
-      var display, res, dot, extension, path, img, nos, $nos, parent, img_tag, 
+      var _display, res, dot, extension, path, img, nos, $nos, parent, img_tag, 
         attrs, attr_parts, attr_name, attr_value, attr_apos, prev_sib, attr_arr = [], 
         $noscripts = document.getElementsByTagName('noscript'), i = 0, k = 0,
         alength, nlength = noscripts.length, iWidth = window.innerWidth || document.body.offsetWidth;
         
       for (res in config) {
         if (iWidth >= parseInt(res, 10)) {
-          display = config[res];
+          _display = config[res];
         }
       }
-      if(air.display === display){
+      if(air._display === _display){
         return;
       } else {
-        air.display = display;
+        air._display = _display;
       }
       
       for (; i < nlength; i++) {
@@ -79,7 +79,7 @@
         
         parent = $nos.parentNode;
         
-        if(display !== undefined) {
+        if(_display !== undefined) {
           
           img = document.createElement("img");
 
@@ -99,7 +99,7 @@
               dot = attr_value.lastIndexOf('.');
               path = attr_value.substring(0, dot);
               extension = attr_value.substring(dot, attr_value.length);
-              img.src = path + display + extension;
+              img.src = path + _display + extension;
               if(air.checkImages) {
                 air._images.push([path, extension]);        
               }
@@ -113,7 +113,7 @@
                 
         if (!resize) {
           
-          if(display !== undefined) {
+          if(_display !== undefined) {
             parent.insertBefore(img, $nos);
           }
           
@@ -122,7 +122,7 @@
           });
 
         } else {
-          if(display !== undefined) {
+          if(_display !== undefined) {
             prev_sib.style.display = 'inline';
             parent.replaceChild(img, prev_sib);
           } else {
