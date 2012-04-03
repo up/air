@@ -10,7 +10,7 @@
   var air = {
     
     noscripts: [],
-    images: [],
+    _images: [],
     display: null,
     checkImages: false,
             
@@ -56,7 +56,7 @@
       }
       
       var display, res, dot, extension, path, img, nos, $nos, parent, img_tag, 
-        attrs, attr_parts, attr_name, attr_value, attr_apos, attr_arr = [],
+        attrs, attr_parts, attr_name, attr_value, attr_apos, prev_sib, attr_arr = [], 
         $noscripts = document.getElementsByTagName('noscript'), i = 0, k = 0,
         alength, nlength = noscripts.length, iWidth = window.innerWidth || document.body.offsetWidth;
         
@@ -65,7 +65,6 @@
           display = config[res];
         }
       }
-      
       if(air.display === display){
         return;
       } else {
@@ -76,54 +75,67 @@
         
         nos = noscripts[i];
         $nos = $noscripts[i];
+        prev_sib = $nos.previousSibling;
         
         parent = $nos.parentNode;
-        img = document.createElement("img");
-
-        img_tag = /<img[^>]+>/.exec(nos)[0];
-        attrs = img_tag.match(/(\w+)=("[^<>"]*"|'[^<>']*'|"\w+)/gi);
-        alength = attrs.length;
         
-        for(k=0;k<alength;k++) {
+        if(display !== undefined) {
           
-          attr_parts = attrs[k].split('=');
-          attr_name = attr_parts[0].toLowerCase();
-          attr_value = attr_parts[1];
-          attr_apos = attr_value.match(/"|'/);
-          attr_value = attr_value.replace(new RegExp (attr_apos[0], 'g'), '');
-          
-          if(attr_name === 'src') {
-            dot = attr_value.lastIndexOf('.');
-            path = attr_value.substring(0, dot);
-            extension = attr_value.substring(dot, attr_value.length);
-            img.src = path + display + extension;
-            if(air.checkImages) {
-              air.images.push([path, extension]);        
+          img = document.createElement("img");
+
+          img_tag = /<img[^>]+>/.exec(nos)[0];
+          attrs = img_tag.match(/(\w+)=("[^<>"]*"|'[^<>']*'|"\w+)/gi);
+          alength = attrs.length;
+
+          for(k=0;k<alength;k++) {
+
+            attr_parts = attrs[k].split('=');
+            attr_name = attr_parts[0].toLowerCase();
+            attr_value = attr_parts[1];
+            attr_apos = attr_value.match(/"|'/);
+            attr_value = attr_value.replace(new RegExp (attr_apos[0], 'g'), '');
+
+            if(attr_name === 'src') {
+              dot = attr_value.lastIndexOf('.');
+              path = attr_value.substring(0, dot);
+              extension = attr_value.substring(dot, attr_value.length);
+              img.src = path + display + extension;
+              if(air.checkImages) {
+                air._images.push([path, extension]);        
+              }
+            } else {
+              img[attr_name] = attr_value;           
             }
-          } else {
-            img[attr_name] = attr_value;           
+
           }
           
         }
                 
         if (!resize) {
           
-          parent.insertBefore(img, $nos);
+          if(display !== undefined) {
+            parent.insertBefore(img, $nos);
+          }
           
           air.addEvent('resize', function() {
             air.set(config, true);
           });
 
         } else {
-          parent.replaceChild(img, $nos.previousSibling);
+          if(display !== undefined) {
+            prev_sib.style.display = 'inline';
+            parent.replaceChild(img, prev_sib);
+          } else {
+            prev_sib.style.display = 'none';
+          }
         }
                 
       }
       
       if(air.checkImages) {
-        for(i=0;i<air.images.length;i++) {
-          path = air.images[i][0];
-          extension = air.images[i][1];
+        for(i=0;i<air._images.length;i++) {
+          path = air._images[i][0];
+          extension = air._images[i][1];
           for (res in config) {
             new Image().src = path + config[res] + extension;
           }          
