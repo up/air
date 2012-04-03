@@ -1,12 +1,15 @@
 AIR - Adaptive Image Replacement
 ====
 
-A tiny tool that can significantly improve the mobile performance of your website by loading optimized 
-images for different screens. Works well with the Responsive Web Design approach. 
+A tiny tool that can significantly improve the mobile performance of your website by loading optimized images 
+for different screens. Works well with the Responsive Web Design approach. 
+
 
 ##Introduction
 
-AIR loads different images for different window sizes. Not only resized images or modified dimensions! You can decide how many alternative images you will offer and breakpoints you will define. **The ingredients**: Javascript, XHR/Ajax, Regular Expressions and noscript elements.
+AIR loads different images for different window sizes - and did not resize images or load them with server-side modified dimensions. You can decide how many alternative images you will offer and breakpoints you will define. 
+
+**The ingredients**: Javascript, XHR/Ajax, Regular Expressions and noscript elements. No user agent sniffing, cookies, canvas elements, dynamically-injected base tags or server-side scripts. 
 
 *	Pure Front-End Solution
 *	Framework-independent
@@ -19,7 +22,7 @@ AIR loads different images for different window sizes. Not only resized images o
 
 ## Source
 
-The project is [hosted on GitHub](http://github.com/up/air/). You can report bugs and discuss features on the [issues page](http://github.com/up/air/issues) and clone the repository with:
+The project is [hosted on GitHub](http://github.com/up/air/). You can clone the repository with:
 
 	git clone git://github.com/up/air.git
 
@@ -58,41 +61,100 @@ You can solve the problem with 'Unobtrusive JavaScript' - which is always prefer
 	<script src="air.min.js"></script>
 
 
-### Step 3 - Choose the suffixes and the corresponding display resolutions (See examples). 
+### Step 3 - Select the breakpoints for any number of display resolutions, and the appropriate file suffixes. There are no specifications for both. 
 
 
-#### Example 1:
-	<script>  
+#### Examples 1 - 3
+
+	<script>
 	air.set({
-	  1: '-mobile',  // Mobile Displays 
-	  1024: ''       // Desktop Displays
+	  1: '-small-screen', // Small screens
+	  480: ''             // .. other screens
 	});
 	</script>
 
-**Note**: In this example, you need 2 different versions of each image
+.. or if you prefer the 'Mobile First' approach: 
 
-	1. MYIMAGE.jpg        (for screens with 1024 and more pixel)
-	2. MYIMAGE-mobile.jpg (for screens with between 1 and 1023 pixel)
-
-
-##### Example 2: 
-	<script>  
+	<script>
 	air.set({
-	  1: '-base',      // e.g. Smartphones (portrait)  
-	  320: '-small',   // e.g. Smartphones (landscape)  
-	  480: '-medium',  // e.g. Tablets (portrait)
-	  960: '',         // Default Image without suffix - e.g. Tablets (landscape), Netbooks, .. 
-	  1280: '-wide'    // e.g. Desktop PCs
+	  1: '',           // Small screens
+	  480: '-nomobile' // .. other screens
 	});
 	</script>
 	
-**Note**: In this example, you need 5 different versions of each image
+If you want to deactivate the default activated onresize event handler, add 'true' as a second argument:
 
-	1. MYIMAGE-base.jpg   (for screens with between 1 and 319 pixel)
-	2. MYIMAGE-small.jpg  (for screens with between 320 and 479 pixel)
-	3. MYIMAGE-medium.jpg (for screens with between 480 and 959 pixel)
-	4. MYIMAGE.jpg        (for screens with between 960 and 1279 pixel)		
-	5. MYIMAGE-wide.jpg   (for screens with 1199 and more pixel)
+	<script>
+	air.set({
+	  1: '',        // Small screens
+	  1024: '-wide' // Wide screens
+	}, true);       // Deactivate onresize event handler
+	</script>
+
+In each of these examples, you need two different versions of each image like:
+
+*	MYIMAGE.png and
+*	MYIMAGE-small-screen.png or <br/>MYIMAGE-nomobile.png or <br/>MYIMAGE-wide.png
+
+
+##### Example 4
+ 
+	<script>
+	air.set({
+	  1: '-smartphone',
+	  570: '-tablet-small',
+	  625: '-tablet',
+	  996: '' // Default (No Javascript, Netbooks, Notebooks, Wide Displays..)
+	});
+	</script>
+	
+You need four different versions of each image:
+
+1.	MYIMAGE-smartphone.jpg (for screens between 1 and 569 px)
+2. 	MYIMAGE-tablet-small.jpg (for screens between 570 and 625 px)
+3.	MYIMAGE-tablet.jpg (for screens between 626 and 996 px)
+4.	MYIMAGE.jpg (for screens greater 996 px)
+
+
+##### Example 5
+
+	<script>
+	air.set({
+	  1: '-base',
+	  321: '-small',
+	  641: '-medium',
+	  961: '', // Default (No Javascript, Netbooks, Notebooks, ..)
+	  1280: '-wide'
+	});
+	</script>
+
+You need five different versions of each image:
+
+1.	MYIMAGE-base.jpg (for screens between 1 and 320 px)
+2.	MYIMAGE-small.jpg (for screens between 320 and 640 px)
+3.	MYIMAGE-medium.jpg (for screens between 640 and 960 px)
+4.	MYIMAGE.jpg (for screens between 960 and 1280 px)
+5.	MYIMAGE-wide.jpg (for screens greater 1280 px)
+
+
+## Check Images
+
+Air offers a small debugging function: You can simply check if all necessary images are exists.
+
+	<script>
+	air.check();
+	...
+	</script>
+
+Air tries to load the images for all screens. If one or more images are not found, you can see correlating error messages on the console, e.g. Firebug:
+
+	"NetworkError: 404 Not Found - http://example.com/MYIMAGE1-base.jpg"
+	"NetworkError: 404 Not Found - http://example.com/MYIMAGE2-wide.jpg"
+
+
+## Any feedback is welcome!
+
+Please report bugs and post your suggestions for improvements or new features on the [github issues page](http://github.com/up/air/issues). 
 
 
 ## Copyright
