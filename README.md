@@ -21,6 +21,10 @@ AIR provides a simple "file suffix"-solution and loads different images for diff
 *	Easy to integrate and use
 *	Tested with Chrome 17, Firefox 11, Safari 5, Opera 11.6 and IE 7+8
 
+## Demo
+
+You can see a live demo at [http://ulipreuss.eu/projects/air/](http://ulipreuss.eu/projects/air/).
+
 
 ## Source
 
