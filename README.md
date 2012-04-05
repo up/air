@@ -30,8 +30,8 @@ The project is [hosted on GitHub](http://github.com/up/air/). You can clone the 
 
 ### Downloads
 
-*	[Development Version](http://raw.github.com/up/air/master/air.js) < 4 kb, Uncompressed
-*	[Production Version](http://raw.github.com/up/air/master/air.min.js) 	< 1 kb, Minified and Gzipped
+*	[Development Version](http://raw.github.com/up/air/master/air.js) 4 kb, Uncompressed
+*	[Production Version](http://raw.github.com/up/air/master/air.min.js) 	1 kb, Minified and Gzipped
 *	[Zip](http://github.com/up/air/zipball/master) 	with example files
 
 
