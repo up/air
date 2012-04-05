@@ -7,7 +7,9 @@ for different screens. Works well with the Responsive Web Design approach.
 
 ##Introduction
 
-AIR loads different images for different window sizes - and did not resize images or load them with server-side modified dimensions. You can decide how many alternative images you will offer and breakpoints you will define. 
+The biggest problem with CSS3's @media-queries and "responsive" websites is that we only can use one single image file. That means we're serving large images to large screens as well as to smartphones with small resolutions. And this increase the loading times for mobile devices especially with low bandwidth.
+
+AIR provides a simple "file suffix"-solution and loads different images for different window sizes. You can decide how many alternative images you will offer and breakpoints you will define.
 
 **The ingredients**: Javascript, XHR/Ajax, Regular Expressions and noscript elements. No user agent sniffing, cookies, canvas elements, dynamically-injected base tags or server-side scripts. 
 
@@ -30,7 +32,7 @@ The project is [hosted on GitHub](http://github.com/up/air/). You can clone the 
 
 *	[Development Version](http://raw.github.com/up/air/master/air.js) < 4 kb, Uncompressed
 *	[Production Version](http://raw.github.com/up/air/master/air.min.js) 	< 1 kb, Minified and Gzipped
-*	[Zip with example files](http://github.com/up/air/zipball/master) 	467 kb
+*	[Zip](http://github.com/up/air/zipball/master) 	with example files
 
 
 ## Usage
@@ -72,12 +74,12 @@ There are many differents screen-widths
 	480px  /* Many mobile devices in landscape */
 	320px  /* Most mobile devices in portrait. */
 	
-#### Examples 1 - 3
+#### Example 1
 
 	<script>
 	air.set({
-	  1: '-small-screen', // Small screens
-	  480: ''             // .. other screens
+	  1: '-small', // Small screens
+	  480: ''      // .. other screens
 	});
 	</script>
 
@@ -90,6 +92,19 @@ There are many differents screen-widths
 	});
 	</script>
 	
+#### Example 2
+
+If you want to load no images on very small screens, then start at a higher value:
+
+	<script>
+	air.set({
+	  240: '',     // Most mobile devices
+	  600: '-wide' // .. other screens
+	});
+	</script>
+	
+#### Example 3
+
 If you want to deactivate the default activated onresize event handler, add 'true' as a second argument:
 
 	<script>
@@ -98,11 +113,12 @@ If you want to deactivate the default activated onresize event handler, add 'tru
 	  1024: '-wide' // Wide screens
 	}, true);       // Deactivate onresize event handler
 	</script>
+	
 
-In each of these examples, you need two different versions of each image like:
+In each of the previous examples, you need two different versions of each image, e.g.:
 
 1.	MYIMAGE.png and
-2.	MYIMAGE-small-screen.png or <br/>MYIMAGE-nomobile.png or <br/>MYIMAGE-wide.png
+2.	MYIMAGE-small.png or <br/>MYIMAGE-nomobile.png or <br/>MYIMAGE-wide.png
 
 
 ##### Example 4
@@ -167,6 +183,6 @@ Please report bugs and post your suggestions for improvements or new features on
 
 ## Copyright
 
-Copyright (c) 2012 Uli Preuss. 
+Copyright (c) 2011 - 2012 Uli Preuss. 
 
 Dual licensed under the [MIT license](http://github.com/up/air/blob/master/MIT-license.txt) and [GPL license](http://github.com/up/air/blob/master/GPL-license.txt).
