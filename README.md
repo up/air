@@ -79,7 +79,7 @@ There are many differents screen-widths
 	<script>
 	air.set({
 	  1: '-small', // Small screens
-	  480: ''      // .. other screens
+	  640: ''      // .. other screens
 	});
 	</script>
 
@@ -88,7 +88,7 @@ There are many differents screen-widths
 	<script>
 	air.set({
 	  1: '',           // Small screens
-	  480: '-nomobile' // .. other screens
+	  640: '-nomobile' // .. other screens
 	});
 	</script>
 	
@@ -99,7 +99,7 @@ If you want to load no images on very small screens, then start at a higher valu
 	<script>
 	air.set({
 	  240: '',     // Most mobile devices
-	  600: '-wide' // .. other screens
+	  640: '-nomobile' // .. other screens
 	});
 	</script>
 	
