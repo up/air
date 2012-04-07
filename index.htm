@@ -20,8 +20,8 @@
     <nav>
       <a href="#introduction">Introduction</a>
       <a href="#source">Source</a>
-      <a href="#usage">Usage</a>
-      <a href="#check">Check Images</a>
+      <a href="#usage">How to use</a>
+      <a href="#check">Check images</a>
       <a href="#feedback">Feedback</a>
     </nav>
 
@@ -59,26 +59,65 @@
       <p>
 	      The biggest problem with CSS3's @media-queries and "responsive" websites is that we only can use one 
 	      single image file. That means we're serving large images to large screens as well as to smartphones 
-	      with small resolutions. And this increase the loading times for mobile devices especially with low bandwidth. 
+	      with small resolutions. And this increase the loading times for mobile devices especially with low bandwidth.
+	      More on the topic can be found here: 
       </p>
+
+      <ul>
+        <li>
+	         <a href="http://www.alistapart.com/articles/responsive-web-design/">
+		         Ethan Marcotte: Responsive Web Design
+		       </a>
+		    </li>
+        <li>
+	         <a href="http://www.alistapart.com/comments/responsive-images-how-they-almost-worked-and-what-we-need/">
+		         Discussion on A List Apart: Responsive Images
+		       </a>
+		    </li>
+        <li>
+	         <a href="http://www.w3.org/community/respimg/">
+		         W3C Responsive Images Community Group
+		       </a>
+		    </li>
+        <li>
+	         <a href="http://blog.cloudfour.com/responsive-imgs-part-2/">
+		         Cloud Four Blog: Responsive IMGs
+		       </a>
+		    </li>
+      </ul>
+
+      <br/>
+
+      <p>
+	      None of the hacks discussed so far could convince me really. But, as Alexander Farkas says, 
+        "innovative frontend development is hacky and always will be hacky!"
+        And that's the truth.
+        Here is my own hack: AIR.
+	    </p>
+
       <p>      
         AIR provides a simple "file suffix"-solution and loads different images for different window sizes.
         You can decide how many alternative images you will offer and breakpoints you will define.
-      </p>
-      <p>      
-        <strong>The ingredients</strong>: Javascript, XHR/Ajax, Regular Expressions and noscript elements. No
-        user agent sniffing, cookies, canvas elements, dynamically-injected base tags or server-side scripts.
+        The ingredients are <strong>Javascript</strong>, <strong>XHR/Ajax</strong>, 
+        <strong>Regular Expressions</strong> and <strong>noscript elements.</strong>
+        Here some facts:
       </p>
 
       <ul>
         <li>Pure front-end solution</li>
         <li>Framework-independent</li>
+        <li>
+	        No user agent sniffing, cookies, canvas elements, dynamically-injected base tags or server-side scripts.
+	      </li>
         <li>Degrades gracefully to standard image if JavaScript is not active.</li>
         <li>Includes onresize event handler (deactivatable)</li>
-        <li>Lightweight (&lt; 1 kb, Minified and Gzipped)</li>
+        <li>Lightweight (1 kb, Minified and Gzipped)</li>
         <li>Easy to integrate and use</li>
+        <li>Minimalistic API (only two public methods)</li>
         <li>Tested with Chrome 17, Firefox 11, Safari 5, Opera 11.6 and IE 7+8</li>
       </ul>
+
+      <br/>
     
     </article>
     
@@ -139,7 +178,7 @@
 
     <article>
     
-      <h3>Usage</h3>
+      <h3>How to use AIR</h3>
 
       <h4>
         <strong>Step 1</strong> - Wrap your images into 'noscript' sections. No need for special attributes.
@@ -197,10 +236,10 @@
 
       <code>
         1440px /* Popular Laptop size, fullscreen 15" MacBook Pro */ <br/>
-        1030px /* iPad landscape */ <br/>
-        770px  /* iPad portait */ <br/>
-        480px  /* Many mobile devices in landscape */ <br/>
-        320px  /* Many mobile devices in portrait. */
+        1024px /* iPad landscape, Many Netbooks */ <br/>
+        <span>&nbsp;</span>768px /* iPad portait */ <br/>
+        <span>&nbsp;</span>480px /* Many mobile devices in landscape */ <br/>
+        <span>&nbsp;</span>320px /* Many mobile devices in portrait. */
       </code>
     
       <br/>
@@ -418,10 +457,11 @@
   </aside>
   
   <script src="https://raw.github.com/up/scroll/master/scroll.min.js"></script>
-  <script src="air.min.js"></script>
+  <script src="https://raw.github.com/up/scroll/master/scroll.min.js"></script>
+  <script src="air.js"></script>
   <script>  
   document.getElementById('bg-ballons').style.display = "block";
-  
+
   //air.check();  
   
   air.set({
