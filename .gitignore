@@ -8,3 +8,7 @@ Thumbs.db
 # Local Development (Files and Folders)
 # starting with an unterscore
 \_*
+
+# Server addons
+.htaccess
+server/
