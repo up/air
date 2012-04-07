@@ -7,19 +7,29 @@ for different screens. Works well with the Responsive Web Design approach.
 
 ##Introduction
 
-The biggest problem with CSS3's @media-queries and "responsive" websites is that we only can use one single image file. That means we're serving large images to large screens as well as to smartphones with small resolutions. And this increase the loading times for mobile devices especially with low bandwidth.
+The biggest problem with CSS3's @media-queries and "responsive" websites is that we only can use one single image file. That means we're serving large images to large screens as well as to smartphones with small resolutions. And this increase the loading times for mobile devices especially with low bandwidth. More on the topic can be found here: 
 
-AIR provides a simple "file suffix"-solution and loads different images for different window sizes. You can decide how many alternative images you will offer and breakpoints you will define.
+*	[Ethan Marcotte: Responsive Web Design](http://www.alistapart.com/articles/responsive-web-design/)
+*	[Discussion on A List Apart: Responsive Images](http://www.alistapart.com/comments/responsive-images-how-they-almost-worked-and-what-we-need/)
+*	[W3C Responsive Images Community Group](http://www.w3.org/community/respimg/)
+*	[Cloud Four Blog: Responsive IMGs](http://blog.cloudfour.com/responsive-imgs-part-2/)
+		         
 
-**The ingredients**: Javascript, XHR/Ajax, Regular Expressions and noscript elements. No user agent sniffing, cookies, canvas elements, dynamically-injected base tags or server-side scripts. 
+None of the hacks discussed so far could convince me really. But, as Alexander Farkas says, "innovative frontend development is hacky and always will be hacky!" And that's the truth. Here is my own hack: AIR.
 
-*	Pure Front-End Solution
+AIR provides a simple "file suffix"-solution and loads different images for different window sizes. You can decide how many alternative images you will offer and breakpoints you will define. The ingredients are Javascript, XHR/Ajax, Regular Expressions and noscript elements. Here some facts:
+
+*	Pure front-end solution
 *	Framework-independent
+*	No user agent sniffing, cookies, canvas elements, dynamically-injected base tags or server-side scripts.
 *	Degrades gracefully to standard image if JavaScript is not active.
 *	Includes onresize event handler (deactivatable)
-*	Lightweight (< 1 kb, Minified and Gzipped)
+*	Lightweight (1 kb, Minified and Gzipped)
 *	Easy to integrate and use
+*	Minimalistic API (only two public methods)
 *	Tested with Chrome 17, Firefox 11, Safari 5, Opera 11.6 and IE 7+8
+
+
 
 ### Demo
 
